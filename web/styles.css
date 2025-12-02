@@ -1,0 +1,121 @@
+:root {
+  --amber: #ffb300;
+  --orange: #ff6b00;
+  --deep: #08070e;
+  --panel-text: #ffe6b4;
+  --panel-shadow: rgba(0, 0, 0, 0.35);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d10cd1;
+  color: var(--panel-text);
+  font-family: "Impact", "Arial Black", "Bebas Neue", "Trebuchet MS", system-ui, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.page {
+  width: min(1200px, 100vw);
+  padding: clamp(12px, 2vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn {
+  padding: 8px 14px;
+  border: 1px solid #444;
+  background: #111;
+  color: #eee;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: #222;
+}
+
+.jackpot-stage {
+  position: relative;
+  width: min(1280px, 100%);
+  aspect-ratio: 16 / 9;
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  mix-blend-mode: normal !important;
+}
+
+#scene-origin {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%) scale(var(--scene-scale, 1));
+  transform-origin: center;
+}
+
+.sprite {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  transform-origin: center;
+  pointer-events: none;
+}
+
+.node {
+  display: block;
+}
+
+.text-node {
+  font-weight: 700;
+  text-shadow: 0 18px 22px var(--panel-shadow);
+  color: #2b0600;
+  letter-spacing: 0.08em;
+}
+
+.bg-glow {
+  background-image: url("assets/bg_glow.jpg");
+  background-size: cover;
+  opacity: 0.7;
+}
+
+.bg-shine {
+  background-image: url("assets/bg_shine.jpg");
+  background-size: contain;
+  background-position: center 40%;
+  opacity: 0.6;
+}
+
+.sparkle {
+  background-size: 100% 100%;
+  filter: drop-shadow(0 0 24px rgba(255, 190, 90, 0.8));
+}
+
+.jackpot-stage .sprite {
+  mix-blend-mode: normal !important;
+}
+
+.jackpot-stage .blend-add {
+  mix-blend-mode: screen !important;
+}
+.jackpot-stage .sprite.blend-add {
+    mix-blend-mode: screen !important;
+    /* Pokud bys chtěl "silnější" svícení, zkus: mix-blend-mode: plus-lighter !important; */
+}
+

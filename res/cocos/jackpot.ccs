@@ -1,0 +1,43 @@
+<Solution>
+  <PropertyGroup Name="jackpot" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="_bitmaps">
+          <PlistImageFolder Image="game_jackpot1.png" PListFile="game_jackpot1.plist" Name=".game_jackpot1_PList.Dir">
+            <PlistImageFile Name="display_bg_bronze.png" Key="display_bg_bronze.png" />
+            <PlistImageFile Name="display_bg_gold.png" Key="display_bg_gold.png" />
+            <PlistImageFile Name="display_bg_silver.png" Key="display_bg_silver.png" />
+            <PlistImageFile Name="display_bg_univerzal.png" Key="display_bg_univerzal.png" />
+            <PlistImageFile Name="title.png" Key="title.png" />
+            <PlistImageFile Name="title_A.png" Key="title_A.png" />
+            <PlistImageFile Name="title_A_glow.png" Key="title_A_glow.png" />
+            <PlistImageFile Name="title_C.png" Key="title_C.png" />
+            <PlistImageFile Name="title_C_glow.png" Key="title_C_glow.png" />
+            <PlistImageFile Name="title_J.png" Key="title_J.png" />
+            <PlistImageFile Name="title_J_glow.png" Key="title_J_glow.png" />
+            <PlistImageFile Name="title_K.png" Key="title_K.png" />
+            <PlistImageFile Name="title_K_glow.png" Key="title_K_glow.png" />
+            <PlistImageFile Name="title_O.png" Key="title_O.png" />
+            <PlistImageFile Name="title_O_glow.png" Key="title_O_glow.png" />
+            <PlistImageFile Name="title_P.png" Key="title_P.png" />
+            <PlistImageFile Name="title_P_glow.png" Key="title_P_glow.png" />
+            <PlistImageFile Name="title_T.png" Key="title_T.png" />
+            <PlistImageFile Name="title_T_glow.png" Key="title_T_glow.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="game_jackpot2.jpg" PListFile="game_jackpot2.plist" Name=".game_jackpot2_PList.Dir">
+            <PlistImageFile Name="bg_glow.jpg" Key="bg_glow.jpg" />
+            <PlistImageFile Name="bg_shine.jpg" Key="bg_shine.jpg" />
+            <PlistImageFile Name="bg_sparkles_B.jpg" Key="bg_sparkles_B.jpg" />
+            <PlistImageFile Name="bg_sparkles_L.jpg" Key="bg_sparkles_L.jpg" />
+            <PlistImageFile Name="bg_sparkles_RB.jpg" Key="bg_sparkles_RB.jpg" />
+            <PlistImageFile Name="bg_sparkles_RT.jpg" Key="bg_sparkles_RT.jpg" />
+          </PlistImageFolder>
+          <Image Name="glow.png" />
+        </Folder>
+        <Project Name="display_bg.csd" Type="Node" />
+        <Project Name="jackpot.csd" Type="Node" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>
