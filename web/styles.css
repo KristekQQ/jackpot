@@ -18,7 +18,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #d10cd1;
+  background: #008000;
   color: var(--panel-text);
   font-family: "Impact", "Arial Black", "Bebas Neue", "Trebuchet MS", system-ui, sans-serif;
   letter-spacing: 0.02em;
@@ -55,7 +55,6 @@ body {
   border-radius: 0;
   background: transparent;
   box-shadow: none;
-  mix-blend-mode: normal !important;
 }
 
 #scene-origin {
@@ -108,14 +107,8 @@ body {
 }
 
 .jackpot-stage .sprite {
-  mix-blend-mode: normal !important;
-}
-
-.jackpot-stage .blend-add {
-  mix-blend-mode: screen !important;
 }
 .jackpot-stage .sprite.blend-add {
     mix-blend-mode: screen !important;
     /* Pokud bys chtěl "silnější" svícení, zkus: mix-blend-mode: plus-lighter !important; */
 }
-

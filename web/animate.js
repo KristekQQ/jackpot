@@ -65,26 +65,40 @@ function normalizeAnchor(anchor) {
 }
 
 function applyTransform(el, state) {
-  const [ax, ay] = normalizeAnchor(state.AnchorPoint);
-  const x = state.Position?.X || 0;
-  const y = state.Position?.Y || 0;
-  const sx = state.Scale?.X ?? 1;
-  const sy = state.Scale?.Y ?? 1;
-  const rot = state.RotationSkewX ?? 0;
-  const size = el.__size || { w: 0, h: 0 };
-  // Position top-left so that the anchor is at (x, -y) in CSS (y-up) space, matching Cocos export.
-  const left = x - ax * size.w;
-  const top = -y - (1 - ay) * size.h;
-  el.style.left = `${left}px`;
-  el.style.top = `${top}px`;
-  el.style.transformOrigin = `${ax * 100}% ${ay * 100}%`;
-  el.style.transform = `scale(${sx}, ${sy}) rotate(${rot}deg)`;
-  if (typeof state.Alpha === "number") {
-    el.style.opacity = state.Alpha / 255;
-  }
-  if (typeof state.VisibleForFrame === "boolean") {
-    el.style.visibility = state.VisibleForFrame ? "visible" : "hidden";
-  }
+    const [ax, ay] = normalizeAnchor(state.AnchorPoint);
+    const x = state.Position?.X || 0;
+    const y = state.Position?.Y || 0;
+    const sx = state.Scale?.X ?? 1;
+    const sy = state.Scale?.Y ?? 1;
+    const rot = state.RotationSkewX ?? 0;
+    const size = el.__size || { w: 0, h: 0 };
+
+    // 1. POZICE (Position)
+    // Cocos má Y nahoru, CSS dolů. Proto top = -y.
+    // Musíme také zohlednit Anchor Point pro umístění levého horního rohu divu.
+    // V Cocos ay=0 je spodek. V CSS top=0 je vršek.
+    // Výpočet: -y (otočení osy) - (vzdálenost od anchoru k horní hraně v CSS)
+    const left = x - ax * size.w;
+    const top = -y - (1 - ay) * size.h;
+
+    el.style.left = `${left}px`;
+    el.style.top = `${top}px`;
+
+    // 2. TRANSFORM ORIGIN (Klíčová oprava)
+    // Cocos Anchor Y: 0 = Spodek, 1 = Vršek
+    // CSS Origin Y: 0% = Vršek, 100% = Spodek
+    // Proto musíme Y invertovat: (1 - ay)
+    el.style.transformOrigin = `${ax * 100}% ${(1 - ay) * 100}%`;
+
+    // 3. TRANSFORMACE
+    el.style.transform = `scale(${sx}, ${sy}) rotate(${rot}deg)`;
+
+    if (typeof state.Alpha === "number") {
+        el.style.opacity = state.Alpha / 255;
+    }
+    if (typeof state.VisibleForFrame === "boolean") {
+        el.style.visibility = state.VisibleForFrame ? "visible" : "hidden";
+    }
 }
 
 function buildTimelineMap(animation) {

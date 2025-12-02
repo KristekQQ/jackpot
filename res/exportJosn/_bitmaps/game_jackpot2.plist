@@ -7,24 +7,24 @@
             <key>bg_glow.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1,1},{1280,720}}</string>
+                <string>{{1,1},{1268,636}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{6,42}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{1280,720}}</string>
+                <string>{{12,0},{1268,636}}</string>
                 <key>sourceSize</key>
                 <string>{1280,720}</string>
             </dict>
             <key>bg_shine.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{723,1},{1022,647}}</string>
+                <string>{{1271,1},{1022,647}}</string>
                 <key>offset</key>
                 <string>{9,-6}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{19,12},{1022,647}}</string>
                 <key>sourceSize</key>
@@ -33,11 +33,11 @@
             <key>bg_sparkles_B.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{723,650},{576,396}}</string>
+                <string>{{1920,505},{576,396}}</string>
                 <key>offset</key>
                 <string>{1,-3}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{19,15},{576,396}}</string>
                 <key>sourceSize</key>
@@ -46,11 +46,11 @@
             <key>bg_sparkles_L.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1195,650},{502,690}}</string>
+                <string>{{1920,1},{502,690}}</string>
                 <key>offset</key>
                 <string>{-1,7}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{0,8},{502,690}}</string>
                 <key>sourceSize</key>
@@ -59,11 +59,11 @@
             <key>bg_sparkles_RB.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{841,1228},{422,352}}</string>
+                <string>{{841,639},{422,352}}</string>
                 <key>offset</key>
                 <string>{1,1}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{2,7},{422,352}}</string>
                 <key>sourceSize</key>
@@ -72,7 +72,7 @@
             <key>bg_sparkles_RT.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1,1283},{838,378}}</string>
+                <string>{{1,639},{838,378}}</string>
                 <key>offset</key>
                 <string>{1,-4}</string>
                 <key>rotated</key>
@@ -94,9 +94,9 @@
             <key>realTextureFileName</key>
             <string>game_jackpot2.png</string>
             <key>size</key>
-            <string>{1746,1662}</string>
+            <string>{2611,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:53e8211df810a6fb7e40f82b54816b6b:5a0e7f2a8ea58a368109ac2f4441e610:2c65623d68abb26f57e3804bddc2570e$</string>
+            <string>$TexturePacker:SmartUpdate:3e36075c0b2814001bb50a44c2de9997:aa197c403003d044258fe7ecf5da6f83:2c65623d68abb26f57e3804bddc2570e$</string>
             <key>textureFileName</key>
             <string>game_jackpot2.png</string>
         </dict>
