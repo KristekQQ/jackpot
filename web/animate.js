@@ -220,25 +220,42 @@ function applyTransform(el, state) {
     const sy = state.Scale?.Y ?? 1;
     const rotX = state.RotationSkewX ?? 0;
     const rotY = state.RotationSkewY ?? rotX;
-    const rot = (rotX + rotY) / 2; // sjednocená rotace z obou složek
+    const rot = (rotX + rotY) / 2;
     const size = el.__size || { w: 0, h: 0 };
 
     // 1. POZICE (Position)
+    // Výpočet Left zůstává stejný
     const left = x - ax * size.w;
-    const top = Y_AXIS_INVERTED
-      ? -y - (1 - ay) * size.h // Y nahoru
-      : y - ay * size.h; // Y dolů
-
     el.style.left = `${left}px`;
-    el.style.top = `${top}px`;
 
-    // 2. TRANSFORM ORIGIN (Klíčová oprava)
+    // --- OPRAVA POZICOVÁNÍ Y ---
+    if (Y_AXIS_INVERTED) {
+        // Cocos režim (Y roste nahoru):
+        // Použijeme 'bottom' místo 'top'.
+        // y = vzdálenost bodu ukotvení od spodku rodiče.
+        // Musíme odečíst (ay * size.h), abychom posunuli "fyzický" spodek divu na správné místo.
+
+        const bottom = y - (ay * size.h);
+
+        el.style.bottom = `${bottom}px`;
+        el.style.top = 'auto'; // Důležité: zrušit top, aby se nehádal s bottom
+    } else {
+        // Standardní režim (Y roste dolů):
+        const top = y - ay * size.h;
+        el.style.top = `${top}px`;
+        el.style.bottom = 'auto';
+    }
+
+    // 2. TRANSFORM ORIGIN
+    // Pokud používáme Y-Up (Cocos), musíme invertovat Y složku anchoru pro CSS transform-origin
+    // (protože v CSS je 0% nahoře, zatímco v Cocos ay=1 je nahoře).
     const originY = Y_AXIS_INVERTED ? (1 - ay) : ay;
     el.style.transformOrigin = `${ax * 100}% ${originY * 100}%`;
 
     // 3. TRANSFORMACE
     el.style.transform = `scale(${sx}, ${sy}) rotate(${rot}deg)`;
 
+    // 4. OSTATNÍ VLASTNOSTI
     if (typeof state.Alpha === "number") {
         el.style.opacity = state.Alpha / 255;
     }
@@ -261,6 +278,88 @@ function buildTimelineMap(animation) {
     propMap.set(timeline.Property, timeline.Frames || timeline.Frame || []);
   }
   return map;
+}
+
+function applyFrameForMap(actionMap, timelines, frame) {
+  for (const [tag, elements] of actionMap.entries()) {
+    const propMap = timelines.get(tag) || new Map();
+    for (const el of elements) {
+      const state = { ...el.__baseState };
+      for (const [prop, frames] of propMap.entries()) {
+        const val = sampleFrame(frames, frame);
+        updateProperty(state, prop, val);
+      }
+      if (state.InnerAction && el.__subPlayer) {
+        const target = state.InnerAction.CurrentAniamtionName || el.__subPlayer.defaultName;
+        if (target && el.__innerActionName !== target) {
+          el.__innerActionName = target;
+          el.__subPlayer.play(target, state.InnerAction.InnerActionType);
+        }
+      }
+      applyTransform(el, state);
+    }
+  }
+}
+
+async function createPlayerFromContent(content, mountEl, basePath) {
+  const animation = content.Animation;
+  const objectData = content.ObjectData;
+  if (!animation || !objectData) return null;
+
+  const timelines = buildTimelineMap(animation);
+  const animationList = new Map();
+  const list = content.AnimationList || animation.AnimationList || [];
+  for (const info of list) {
+    animationList.set(info.Name, { start: info.StartIndex, end: info.EndIndex });
+  }
+  const actionMap = new Map();
+  await buildNodes(objectData, mountEl, actionMap, basePath);
+
+  const defaultName = animation.ActivedAnimationName || list[0]?.Name;
+  const fps = 60;
+  let raf = null;
+  let resolveCurrent = null;
+
+  const applyFrame = (frame) => applyFrameForMap(actionMap, timelines, frame);
+  applyFrame(0);
+
+  function stop() {
+    if (raf) cancelAnimationFrame(raf);
+    raf = null;
+    if (resolveCurrent) {
+      resolveCurrent();
+      resolveCurrent = null;
+    }
+  }
+
+  function play(name, innerActionType) {
+    const target = name || defaultName;
+    const info = target ? animationList.get(target) : null;
+    if (!info) return Promise.resolve(null);
+    stop();
+    const loop = innerActionType === "LoopAction";
+    return new Promise((resolve) => {
+      resolveCurrent = resolve;
+      const length = Math.max(info.end - info.start, 1);
+      const durationMs = (length / fps) * 1000;
+      const start = performance.now();
+      const tick = (now) => {
+        const t = (now - start) / durationMs;
+        const frame = info.start + Math.min(t, 1) * length;
+        applyFrame(frame);
+        if (loop || t < 1) {
+          raf = requestAnimationFrame(tick);
+        } else {
+          raf = null;
+          resolveCurrent = null;
+          resolve();
+        }
+      };
+      raf = requestAnimationFrame(tick);
+    });
+  }
+
+  return { play, animations: animationList, defaultName };
 }
 
 function sampleFrame(frames, frameIndex) {
@@ -320,6 +419,7 @@ function extractInitialState(node) {
     VisibleForFrame: node.VisibleForFrame !== false,
     FileData: node.FileData,
     BlendFunc: node.BlendFunc,
+    InnerAction: null,
   };
 }
 
@@ -335,6 +435,7 @@ function updateProperty(state, property, sample) {
   if (property === "VisibleForFrame") state.VisibleForFrame = sample.Value;
   if (property === "FileData" && sample.TextureFile) state.FileData = sample.TextureFile;
   if (property === "BlendFunc") state.BlendFunc = sample;
+  if (property === "ActionValue") state.InnerAction = sample;
 }
 
 async function buildNodes(node, parentEl, actionMap, basePath, zIndex = 0) {
@@ -348,6 +449,34 @@ async function buildNodes(node, parentEl, actionMap, basePath, zIndex = 0) {
     const tag = node.ActionTag;
     if (!actionMap.has(tag)) actionMap.set(tag, []);
     actionMap.get(tag).push(el);
+
+    // Pokud je to ProjectNodeObjectData, načteme vnořený projekt jako sub-player
+    if (node.ctype === "ProjectNodeObjectData" && node.FileData?.Path) {
+        const nestedPath = resolvePathRelative(node.FileData.Path, basePath);
+        const nestedBase = nestedPath.slice(0, nestedPath.lastIndexOf("/") + 1);
+        try {
+            const nested = await loadJson(nestedPath);
+            const nestedContent = nested.Content?.Content;
+            if (nestedContent?.ObjectData && nestedContent?.Animation) {
+                // přenést název/ActionTag na kořen vnořeného projektu, aby seděl s časovou osou rodiče
+                if (node.Name) nestedContent.ObjectData.Name = node.Name;
+                nestedContent.ObjectData.ActionTag = node.ActionTag ?? nestedContent.ObjectData.ActionTag;
+                nestedContent.ObjectData.Position = nestedContent.ObjectData.Position || { X: 0, Y: 0 };
+                nestedContent.ObjectData.Scale = nestedContent.ObjectData.Scale || { X: 1, Y: 1 };
+                nestedContent.ObjectData.AnchorPoint = nestedContent.ObjectData.AnchorPoint || { ScaleX: 0.5, ScaleY: 0.5 };
+                const subPlayer = await createPlayerFromContent(nestedContent, el, nestedBase);
+                if (subPlayer) {
+                    el.__subPlayer = subPlayer;
+                    el.__innerActionName = subPlayer.defaultName;
+                    if (subPlayer.defaultName) {
+                        subPlayer.play(subPlayer.defaultName, "LoopAction");
+                    }
+                }
+            }
+        } catch (e) {
+            console.error("Nested project load failed", node.FileData.Path, e);
+        }
+    }
 
     // --- ZDE ZAČÍNÁ FIX PRO ATLASY ---
     const file = node.FileData;
@@ -450,20 +579,7 @@ async function buildNodes(node, parentEl, actionMap, basePath, zIndex = 0) {
     if (node.Children) {
         for (let idx = 0; idx < node.Children.length; idx++) {
             const child = node.Children[idx];
-            if (child.ctype === "ProjectNodeObjectData" && child.FileData?.Path) {
-                const nestedPath = resolvePathRelative(child.FileData.Path, basePath);
-                const nested = await loadJson(nestedPath);
-                const nestedObj = nested.Content.Content.ObjectData;
-                if (child.Name) nestedObj.Name = child.Name;
-                nestedObj.Position = child.Position;
-                nestedObj.Scale = child.Scale;
-                nestedObj.AnchorPoint = child.AnchorPoint;
-                nestedObj.ActionTag = child.ActionTag;
-                nestedObj.Alpha = child.Alpha;
-                await buildNodes(nestedObj, el, actionMap, basePath, zIndex + idx + 1);
-            } else {
-                await buildNodes(child, el, actionMap, basePath, zIndex + idx + 1);
-            }
+            await buildNodes(child, el, actionMap, basePath, zIndex + idx + 1);
         }
     }
 }
@@ -503,19 +619,7 @@ async function main(jsonPath = "../res/exportJosn/jackpot.json") {
   resize();
   window.addEventListener("resize", resize);
 
-  function applyFrame(frame) {
-    for (const [tag, elements] of actionMap.entries()) {
-      const propMap = timelines.get(tag) || new Map();
-      for (const el of elements) {
-        const state = { ...el.__baseState };
-        for (const [prop, frames] of propMap.entries()) {
-          const val = sampleFrame(frames, frame);
-          updateProperty(state, prop, val);
-        }
-        applyTransform(el, state);
-      }
-    }
-  }
+  const applyFrame = (frame) => applyFrameForMap(actionMap, timelines, frame);
 
   applyFrame(0);
 
