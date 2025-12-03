@@ -291,9 +291,12 @@ function applyFrameForMap(actionMap, timelines, frame) {
       }
       if (state.InnerAction && el.__subPlayer) {
         const target = state.InnerAction.CurrentAniamtionName || el.__subPlayer.defaultName;
-        if (target && el.__innerActionName !== target) {
+        const innerType = state.InnerAction.InnerActionType || "NoLoopAction";
+        const key = `${target}|${innerType}|${state.InnerAction.SingleFrameIndex ?? ""}`;
+        if (target && el.__innerActionKey !== key) {
+          el.__innerActionKey = key;
           el.__innerActionName = target;
-          el.__subPlayer.play(target, state.InnerAction.InnerActionType);
+          el.__subPlayer.play(target, innerType, state.InnerAction.SingleFrameIndex);
         }
       }
       applyTransform(el, state);
@@ -332,12 +335,13 @@ async function createPlayerFromContent(content, mountEl, basePath) {
     }
   }
 
-  function play(name, innerActionType) {
+  function play(name, innerActionType, startFrameIndex) {
     const target = name || defaultName;
     const info = target ? animationList.get(target) : null;
     if (!info) return Promise.resolve(null);
     stop();
     const loop = innerActionType === "LoopAction";
+    const offset = typeof startFrameIndex === "number" ? startFrameIndex : 0;
     return new Promise((resolve) => {
       resolveCurrent = resolve;
       const length = Math.max(info.end - info.start, 1);
@@ -345,7 +349,8 @@ async function createPlayerFromContent(content, mountEl, basePath) {
       const start = performance.now();
       const tick = (now) => {
         const t = (now - start) / durationMs;
-        const frame = info.start + Math.min(t, 1) * length;
+        const progress = loop ? (t % 1) : Math.min(t, 1);
+        const frame = info.start + offset + progress * length;
         applyFrame(frame);
         if (loop || t < 1) {
           raf = requestAnimationFrame(tick);
