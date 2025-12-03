@@ -1,0 +1,282 @@
+{
+  "ID": "9e59e8a1-20db-4ddf-8404-f3d15fe20f39",
+  "Version": "2.3.4",
+  "Name": "scene",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 56,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/game.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "RightMargin": 960.0,
+            "TopMargin": 640.0,
+            "Tag": 64,
+            "ActionTag": 1676996317,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "game",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 304.0,
+              "Y": 720.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.3167,
+              "Y": 1.125
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 304.0,
+            "RightMargin": 656.0,
+            "TopMargin": -80.0,
+            "BottomMargin": 720.0,
+            "Tag": 527,
+            "ActionTag": -917484619,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "extensionFreespin",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "bonus/bonusSwitchScreen.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "RightMargin": 960.0,
+            "TopMargin": 640.0,
+            "Tag": 180,
+            "ActionTag": 775792142,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "bonusSwitchScreen",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 0.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "RightMargin": 960.0,
+            "TopMargin": 640.0,
+            "Tag": 241,
+            "ActionTag": 1530973826,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "introScreen",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "ClipAble": false,
+            "BackColorAlpha": 0,
+            "SingleColor": {
+              "R": 150,
+              "G": 200
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 640.0,
+              "Y": 400.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6667,
+              "Y": 0.625
+            },
+            "PreSize": {
+              "X": 1.1667,
+              "Y": 1.0938
+            },
+            "LeftMargin": 80.0,
+            "RightMargin": -240.0,
+            "TopMargin": -110.0,
+            "BottomMargin": 50.0,
+            "Tag": 139,
+            "ActionTag": -54435538,
+            "Size": {
+              "X": 1120.0,
+              "Y": 700.0
+            },
+            "Name": "minAreaLandscape",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "ClipAble": false,
+            "BackColorAlpha": 0,
+            "SingleColor": {
+              "R": 150,
+              "G": 200
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 640.0,
+              "Y": 310.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6667,
+              "Y": 0.4844
+            },
+            "PreSize": {
+              "X": 0.8958,
+              "Y": 2.5313
+            },
+            "LeftMargin": 210.0,
+            "RightMargin": -110.0,
+            "TopMargin": -480.0,
+            "BottomMargin": -500.0,
+            "Tag": 292,
+            "ActionTag": -97280622,
+            "Size": {
+              "X": 860.0,
+              "Y": 1620.0
+            },
+            "Name": "minAreaPortrait",
+            "ctype": "PanelObjectData"
+          }
+        ],
+        "Size": {
+          "X": 960.0,
+          "Y": 640.0
+        },
+        "Name": "Scene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "bonus/bonusSwitchScreen.json",
+        "game/game.json"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Scene"
+}

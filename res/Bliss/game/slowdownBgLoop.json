@@ -1,0 +1,173 @@
+{
+  "ID": "c11f8248-5ae0-4290-94ea-8394c7171afb",
+  "Version": "2.3.4",
+  "Name": "slowdownBgLoop",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 14,
+        "Speed": 1.0,
+        "Timelines": [
+          {
+            "ActionTag": 355640693,
+            "Property": "FileData",
+            "Frames": [
+              {
+                "TextureFile": {
+                  "Type": "PlistSubImage",
+                  "Path": "slowdown_bg_0.png",
+                  "Plist": "_bitmaps/gameSlowDown.plist"
+                },
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "TextureFrameData"
+              },
+              {
+                "TextureFile": {
+                  "Type": "PlistSubImage",
+                  "Path": "slowdown_bg_1.png",
+                  "Plist": "_bitmaps/gameSlowDown.plist"
+                },
+                "FrameIndex": 2,
+                "Tween": false,
+                "ctype": "TextureFrameData"
+              },
+              {
+                "TextureFile": {
+                  "Type": "PlistSubImage",
+                  "Path": "slowdown_bg_2.png",
+                  "Plist": "_bitmaps/gameSlowDown.plist"
+                },
+                "FrameIndex": 4,
+                "Tween": false,
+                "ctype": "TextureFrameData"
+              },
+              {
+                "TextureFile": {
+                  "Type": "PlistSubImage",
+                  "Path": "slowdown_bg_3.png",
+                  "Plist": "_bitmaps/gameSlowDown.plist"
+                },
+                "FrameIndex": 6,
+                "Tween": false,
+                "ctype": "TextureFrameData"
+              },
+              {
+                "TextureFile": {
+                  "Type": "PlistSubImage",
+                  "Path": "slowdown_bg_4.png",
+                  "Plist": "_bitmaps/gameSlowDown.plist"
+                },
+                "FrameIndex": 8,
+                "Tween": false,
+                "ctype": "TextureFrameData"
+              },
+              {
+                "TextureFile": {
+                  "Type": "PlistSubImage",
+                  "Path": "slowdown_bg_5.png",
+                  "Plist": "_bitmaps/gameSlowDown.plist"
+                },
+                "FrameIndex": 10,
+                "Tween": false,
+                "ctype": "TextureFrameData"
+              },
+              {
+                "TextureFile": {
+                  "Type": "PlistSubImage",
+                  "Path": "slowdown_bg_6.png",
+                  "Plist": "_bitmaps/gameSlowDown.plist"
+                },
+                "FrameIndex": 12,
+                "Tween": false,
+                "ctype": "TextureFrameData"
+              },
+              {
+                "TextureFile": {
+                  "Type": "PlistSubImage",
+                  "Path": "slowdown_bg_7.png",
+                  "Plist": "_bitmaps/gameSlowDown.plist"
+                },
+                "FrameIndex": 14,
+                "Tween": false,
+                "ctype": "TextureFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          }
+        ],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [
+        {
+          "StartIndex": 0,
+          "EndIndex": 16,
+          "Name": "LOOP",
+          "ctype": "AnimationInfoData"
+        }
+      ],
+      "ObjectData": {
+        "Tag": 157,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "PlistSubImage",
+              "Path": "slowdown_bg_0.png",
+              "Plist": "_bitmaps/gameSlowDown.plist"
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -72.0,
+            "RightMargin": -72.0,
+            "TopMargin": -280.0,
+            "BottomMargin": -280.0,
+            "Tag": 162,
+            "ActionTag": 355640693,
+            "Size": {
+              "X": 144.0,
+              "Y": 560.0
+            },
+            "Name": "bgSprite",
+            "ctype": "SpriteObjectData"
+          }
+        ],
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Name": "Node",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "../_bitmaps/gameSlowDown.plist",
+        "../_bitmaps/gameSlowDown.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Node"
+}

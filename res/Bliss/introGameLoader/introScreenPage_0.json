@@ -1,0 +1,219 @@
+{
+  "ID": "81f236b1-a6de-4f3b-96be-8afeaa7c3ec9",
+  "Version": "2.3.4",
+  "Name": "introScreenPage_0",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "ActivedAnimationName": "HORIZONTAL",
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [
+        {
+          "StartIndex": 0,
+          "EndIndex": 300,
+          "Name": "ANIMATION",
+          "ctype": "AnimationInfoData"
+        },
+        {
+          "StartIndex": 1,
+          "EndIndex": 1,
+          "Name": "HORIZONTAL",
+          "ctype": "AnimationInfoData"
+        },
+        {
+          "StartIndex": 2,
+          "EndIndex": 2,
+          "Name": "VERTICAL",
+          "ctype": "AnimationInfoData"
+        }
+      ],
+      "ObjectData": {
+        "Tag": 471,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "PlistSubImage",
+              "Path": "intro_content.png",
+              "Plist": "introGameLoader/_bitmaps/intro_screen.plist"
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 648.0,
+              "Y": 404.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 312.0,
+            "RightMargin": -984.0,
+            "TopMargin": -695.0,
+            "BottomMargin": 113.0,
+            "Tag": 507,
+            "ActionTag": 1619605035,
+            "Size": {
+              "X": 672.0,
+              "Y": 582.0
+            },
+            "Name": "introScreenContent",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 20,
+            "LabelText": "TXT\nTXT\nTXT",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "_bitmaps/font/Roboto-Medium.ttf",
+              "Plist": ""
+            },
+            "HorizontalAlignmentType": "HT_Center",
+            "VerticalAlignmentType": "VT_Center",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 741.4092,
+              "Y": 519.435
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "G": 238,
+              "B": 113
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 606.4092,
+            "RightMargin": -876.4092,
+            "TopMargin": -579.435,
+            "BottomMargin": 459.435,
+            "Tag": 60,
+            "ActionTag": 447952027,
+            "Size": {
+              "X": 270.0,
+              "Y": 120.0
+            },
+            "Name": "TEXT_0",
+            "ctype": "TextObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 20,
+            "LabelText": "TXT\nTXT\nTXT\nTXT",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "_bitmaps/font/Roboto-Medium.ttf",
+              "Plist": ""
+            },
+            "HorizontalAlignmentType": "HT_Center",
+            "VerticalAlignmentType": "VT_Center",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 556.0,
+              "Y": 251.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "G": 238,
+              "B": 113
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 431.0,
+            "RightMargin": -681.0,
+            "TopMargin": -321.0,
+            "BottomMargin": 181.0,
+            "Tag": 4206,
+            "ActionTag": 639536106,
+            "Size": {
+              "X": 250.0,
+              "Y": 140.0
+            },
+            "Name": "TEXT_1",
+            "ctype": "TextObjectData"
+          }
+        ],
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Name": "Node",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "../_bitmaps/font/Roboto-Medium.ttf",
+        "_bitmaps/intro_screen.plist",
+        "_bitmaps/intro_screen.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Node"
+}

@@ -1,0 +1,403 @@
+{
+  "ID": "b8a77503-b46f-4004-99f7-bc634bb8fcf5",
+  "Version": "2.3.4",
+  "Name": "introScreen",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 1,
+        "Speed": 1.0,
+        "ActivedAnimationName": "HORIZONTAL",
+        "Timelines": [
+          {
+            "ActionTag": 383812104,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": 640.0,
+                "Y": 390.0,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 640.0,
+                "Y": 360.0,
+                "FrameIndex": 1,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 988432246,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": 0.0,
+                "Y": 30.0,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 0.0,
+                "Y": 0.0,
+                "FrameIndex": 1,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -914558635,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": 640.0,
+                "Y": 116.0,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 640.0,
+                "Y": 36.0,
+                "FrameIndex": 1,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1067292628,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": 195.0,
+                "Y": 615.0,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 632.0,
+                "Y": 802.0,
+                "FrameIndex": 1,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1067292628,
+            "Property": "Scale",
+            "Frames": [
+              {
+                "X": 0.65,
+                "Y": 0.65,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": 1.0,
+                "Y": 1.0,
+                "FrameIndex": 1,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1868733225,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": 1118.0,
+                "Y": 646.0,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 378.0,
+                "Y": 912.0,
+                "FrameIndex": 1,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          }
+        ],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [
+        {
+          "StartIndex": 0,
+          "EndIndex": 0,
+          "Name": "HORIZONTAL",
+          "ctype": "AnimationInfoData"
+        },
+        {
+          "StartIndex": 1,
+          "EndIndex": 1,
+          "Name": "VERTICAL",
+          "ctype": "AnimationInfoData"
+        }
+      ],
+      "ObjectData": {
+        "Tag": 178,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "introGameLoader/_bitmaps/intro_bg.jpg",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 640.0,
+              "Y": 390.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "RightMargin": -1280.0,
+            "TopMargin": -1030.0,
+            "BottomMargin": -250.0,
+            "Tag": 469,
+            "ActionTag": 383812104,
+            "Size": {
+              "X": 1280.0,
+              "Y": 1280.0
+            },
+            "Name": "bg",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "introGameLoader/pages.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 30.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "TopMargin": -30.0,
+            "BottomMargin": 30.0,
+            "Tag": 508,
+            "ActionTag": 988432246,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "pages",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "introGameLoader/introLoader.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 640.0,
+              "Y": 116.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 640.0,
+            "RightMargin": -640.0,
+            "TopMargin": -116.0,
+            "BottomMargin": 116.0,
+            "Tag": 104,
+            "ActionTag": -914558635,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "introLoader",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "PlistSubImage",
+              "Path": "intro_logo.png",
+              "Plist": "introGameLoader/_bitmaps/intro_screen.plist"
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 195.0,
+              "Y": 615.0
+            },
+            "Scale": {
+              "ScaleX": 0.65,
+              "ScaleY": 0.65
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 34.5,
+            "RightMargin": -355.5,
+            "TopMargin": -725.5,
+            "BottomMargin": 504.5,
+            "Tag": 4199,
+            "ActionTag": 1067292628,
+            "Size": {
+              "X": 321.0,
+              "Y": 221.0
+            },
+            "Name": "gameLogo",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "PlistSubImage",
+              "Path": "intro_logo_apollogames.png",
+              "Plist": "introGameLoader/_bitmaps/intro_screen.plist"
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1118.0,
+              "Y": 646.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 1079.5,
+            "RightMargin": -1156.5,
+            "TopMargin": -695.5,
+            "BottomMargin": 596.5,
+            "Tag": 4200,
+            "ActionTag": 1868733225,
+            "Size": {
+              "X": 77.0,
+              "Y": 99.0
+            },
+            "Name": "logoApollo",
+            "ctype": "SpriteObjectData"
+          }
+        ],
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Name": "Node",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "_bitmaps/intro_bg.jpg",
+        "_bitmaps/intro_screen.plist",
+        "_bitmaps/intro_screen.png",
+        "introLoader.json",
+        "pages.json"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Node"
+}

@@ -1,0 +1,1687 @@
+{
+  "ID": "dfc607c3-6c3c-41a9-90bf-81eeae9f2381",
+  "Version": "2.3.4",
+  "Name": "winningLines",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 15,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine0-3.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 639.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -639.0,
+            "BottomMargin": 639.0,
+            "Tag": 38,
+            "ActionTag": -191043889,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine0",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine0-3.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 503.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -503.0,
+            "BottomMargin": 503.0,
+            "Tag": 47,
+            "ActionTag": 1380656440,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine1",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine0-3.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 367.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -367.0,
+            "BottomMargin": 367.0,
+            "Tag": 50,
+            "ActionTag": -783845798,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine2",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine0-3.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 231.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -231.0,
+            "BottomMargin": 231.0,
+            "Tag": 54,
+            "ActionTag": 674551105,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine3",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine4-5.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 503.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -503.0,
+            "BottomMargin": 503.0,
+            "Tag": 59,
+            "ActionTag": -1202526469,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine4",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine4-5.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 367.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": -1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -367.0,
+            "BottomMargin": 367.0,
+            "Tag": 65,
+            "ActionTag": 283803659,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine5",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine6-7.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 639.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -639.0,
+            "BottomMargin": 639.0,
+            "Tag": 72,
+            "ActionTag": 279805615,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine6",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine6-7.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 231.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": -1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -231.0,
+            "BottomMargin": 231.0,
+            "Tag": 80,
+            "ActionTag": -1279453622,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine7",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine8-9.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 503.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -503.0,
+            "BottomMargin": 503.0,
+            "Tag": 129,
+            "ActionTag": -759093475,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine8",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine8-9.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 367.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": -1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -367.0,
+            "BottomMargin": 367.0,
+            "Tag": 194,
+            "ActionTag": 242935739,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine9",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine10-11.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 639.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -639.0,
+            "BottomMargin": 639.0,
+            "Tag": 221,
+            "ActionTag": 1052450160,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine10",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine10-11.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 231.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": -1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -231.0,
+            "BottomMargin": 231.0,
+            "Tag": 231,
+            "ActionTag": -1499504293,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine11",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine12-13.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 503.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -503.0,
+            "BottomMargin": 503.0,
+            "Tag": 401,
+            "ActionTag": 1084933770,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine12",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine12-13.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 367.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": -1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -367.0,
+            "BottomMargin": 367.0,
+            "Tag": 413,
+            "ActionTag": 1669587279,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine13",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine14-15.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 639.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -639.0,
+            "BottomMargin": 639.0,
+            "Tag": 218,
+            "ActionTag": -1964526499,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine14",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine14-15.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 231.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": -1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -231.0,
+            "BottomMargin": 231.0,
+            "Tag": 231,
+            "ActionTag": 378131205,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine15",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine12-13.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 503.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": -1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -503.0,
+            "BottomMargin": 503.0,
+            "Tag": 244,
+            "ActionTag": -1969105144,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine16",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine12-13.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 367.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -367.0,
+            "BottomMargin": 367.0,
+            "Tag": 256,
+            "ActionTag": -73154069,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine17",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine8-9.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 639.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": -1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -639.0,
+            "BottomMargin": 639.0,
+            "Tag": 273,
+            "ActionTag": 277964721,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine18",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine8-9.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 231.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -231.0,
+            "BottomMargin": 231.0,
+            "Tag": 285,
+            "ActionTag": -1922066778,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine19",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine20-21.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 503.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -503.0,
+            "BottomMargin": 503.0,
+            "Tag": 659,
+            "ActionTag": -1187603092,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine20",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine20-21.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 367.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": -1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -367.0,
+            "BottomMargin": 367.0,
+            "Tag": 669,
+            "ActionTag": 341432281,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine21",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine22-23.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 503.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -503.0,
+            "BottomMargin": 503.0,
+            "Tag": 964,
+            "ActionTag": -643655146,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine22",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine22-23.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 367.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": -1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -367.0,
+            "BottomMargin": 367.0,
+            "Tag": 950,
+            "ActionTag": -607191771,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine23",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine24-25.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 503.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -503.0,
+            "BottomMargin": 503.0,
+            "Tag": 1565,
+            "ActionTag": 1852830267,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine24",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine24-25.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 367.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": -1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -367.0,
+            "BottomMargin": 367.0,
+            "Tag": 1703,
+            "ActionTag": -546631182,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine25",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine22-23.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 639.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": -1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -639.0,
+            "BottomMargin": 639.0,
+            "Tag": 1719,
+            "ActionTag": 1127301431,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine26",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine22-23.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 231.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -231.0,
+            "BottomMargin": 231.0,
+            "Tag": 1730,
+            "ActionTag": 1079606708,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine27",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine28-29.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 639.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -639.0,
+            "BottomMargin": 639.0,
+            "Tag": 2000,
+            "ActionTag": -1127452264,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine28",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine28-29.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 231.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": -1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -231.0,
+            "BottomMargin": 231.0,
+            "Tag": 2016,
+            "ActionTag": 1285759167,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine29",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine30-31.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 639.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -639.0,
+            "BottomMargin": 639.0,
+            "Tag": 2437,
+            "ActionTag": -608329516,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine30",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine30-31.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 231.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": -1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -231.0,
+            "BottomMargin": 231.0,
+            "Tag": 2572,
+            "ActionTag": 1299525293,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine31",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine32-33.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 503.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -503.0,
+            "BottomMargin": 503.0,
+            "Tag": 2842,
+            "ActionTag": -336431419,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine32",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine32-33.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 367.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": -1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -367.0,
+            "BottomMargin": 367.0,
+            "Tag": 2859,
+            "ActionTag": -1232289526,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine33",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine34-35.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 639.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -639.0,
+            "BottomMargin": 639.0,
+            "Tag": 3119,
+            "ActionTag": -1236751078,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine34",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine34-35.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 231.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": -1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -231.0,
+            "BottomMargin": 231.0,
+            "Tag": 3134,
+            "ActionTag": 1616305699,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine35",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine36-37.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 503.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -503.0,
+            "BottomMargin": 503.0,
+            "Tag": 3408,
+            "ActionTag": -1887732992,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine36",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine36-37.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 367.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": -1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -367.0,
+            "BottomMargin": 367.0,
+            "Tag": 3424,
+            "ActionTag": 266569129,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine37",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine38-39.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 639.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -639.0,
+            "BottomMargin": 639.0,
+            "Tag": 3680,
+            "ActionTag": 1936188672,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine38",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game/winning_lines/winningLine38-39.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 231.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": -1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -231.0,
+            "BottomMargin": 231.0,
+            "Tag": 3817,
+            "ActionTag": -1349442206,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "winningLine39",
+            "ctype": "ProjectNodeObjectData"
+          }
+        ],
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Name": "Node",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "winningLine0-3.json",
+        "winningLine10-11.json",
+        "winningLine12-13.json",
+        "winningLine14-15.json",
+        "winningLine20-21.json",
+        "winningLine22-23.json",
+        "winningLine24-25.json",
+        "winningLine28-29.json",
+        "winningLine30-31.json",
+        "winningLine32-33.json",
+        "winningLine34-35.json",
+        "winningLine36-37.json",
+        "winningLine38-39.json",
+        "winningLine4-5.json",
+        "winningLine6-7.json",
+        "winningLine8-9.json"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Node"
+}

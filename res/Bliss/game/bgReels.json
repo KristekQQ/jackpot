@@ -1,0 +1,3704 @@
+{
+  "ID": "35df665a-ec6a-4837-897e-50d22e38f911",
+  "Version": "2.3.4",
+  "Name": "bgReels",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 260,
+        "Speed": 1.0,
+        "Timelines": [
+          {
+            "ActionTag": -1092467277,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": -1.9982,
+                "Y": 104.0002,
+                "FrameIndex": 5,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 83.0,
+                "FrameIndex": 10,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 60.0,
+                "FrameIndex": 15,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 41.0,
+                "FrameIndex": 20,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 20.0,
+                "FrameIndex": 25,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -1.0,
+                "FrameIndex": 30,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -23.0,
+                "FrameIndex": 35,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -44.0,
+                "FrameIndex": 40,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -63.0,
+                "FrameIndex": 45,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -85.0,
+                "FrameIndex": 50,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -106.0,
+                "FrameIndex": 55,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -127.0,
+                "FrameIndex": 60,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -147.0,
+                "FrameIndex": 65,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -169.0,
+                "FrameIndex": 70,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -188.0,
+                "FrameIndex": 75,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -210.0,
+                "FrameIndex": 80,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -231.0,
+                "FrameIndex": 85,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -252.0,
+                "FrameIndex": 90,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -273.0,
+                "FrameIndex": 95,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -296.0,
+                "FrameIndex": 100,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -1092467277,
+            "Property": "Alpha",
+            "Frames": [
+              {
+                "Value": 0,
+                "FrameIndex": 5,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 102,
+                "FrameIndex": 10,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 204,
+                "FrameIndex": 95,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 0,
+                "FrameIndex": 100,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -1160712691,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": -1.9982,
+                "Y": 104.0002,
+                "FrameIndex": 10,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 83.0,
+                "FrameIndex": 15,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 60.0,
+                "FrameIndex": 20,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 41.0,
+                "FrameIndex": 25,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 20.0,
+                "FrameIndex": 30,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -1.0,
+                "FrameIndex": 35,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -23.0,
+                "FrameIndex": 40,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -44.0,
+                "FrameIndex": 45,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -63.0,
+                "FrameIndex": 50,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -85.0,
+                "FrameIndex": 55,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -106.0,
+                "FrameIndex": 60,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -127.0,
+                "FrameIndex": 65,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -147.0,
+                "FrameIndex": 70,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -169.0,
+                "FrameIndex": 75,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -188.0,
+                "FrameIndex": 80,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -210.0,
+                "FrameIndex": 85,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -231.0,
+                "FrameIndex": 90,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -252.0,
+                "FrameIndex": 95,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -273.0,
+                "FrameIndex": 100,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -296.0,
+                "FrameIndex": 105,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -1160712691,
+            "Property": "Alpha",
+            "Frames": [
+              {
+                "Value": 0,
+                "FrameIndex": 10,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 51,
+                "FrameIndex": 15,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 127,
+                "FrameIndex": 100,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 0,
+                "FrameIndex": 105,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -774093939,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": -1.9982,
+                "Y": 104.0002,
+                "FrameIndex": 0,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 83.0,
+                "FrameIndex": 5,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 60.0,
+                "FrameIndex": 10,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 41.0,
+                "FrameIndex": 15,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 20.0,
+                "FrameIndex": 20,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -1.0,
+                "FrameIndex": 25,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -23.0,
+                "FrameIndex": 30,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -44.0,
+                "FrameIndex": 35,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -63.0,
+                "FrameIndex": 40,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -85.0,
+                "FrameIndex": 45,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -106.0,
+                "FrameIndex": 50,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -127.0,
+                "FrameIndex": 55,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -147.0,
+                "FrameIndex": 60,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -169.0,
+                "FrameIndex": 65,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -188.0,
+                "FrameIndex": 70,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -210.0,
+                "FrameIndex": 75,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -231.0,
+                "FrameIndex": 80,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -252.0,
+                "FrameIndex": 85,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -273.0,
+                "FrameIndex": 90,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -296.0,
+                "FrameIndex": 95,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -774093939,
+            "Property": "Alpha",
+            "Frames": [
+              {
+                "Value": 0,
+                "FrameIndex": 0,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 51,
+                "FrameIndex": 5,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 127,
+                "FrameIndex": 90,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 0,
+                "FrameIndex": 95,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1351533667,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              },
+              {
+                "Value": false,
+                "FrameIndex": 105,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -1005000831,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": -1.9982,
+                "Y": 104.0002,
+                "FrameIndex": 110,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 83.0,
+                "FrameIndex": 115,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 60.0,
+                "FrameIndex": 120,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 41.0,
+                "FrameIndex": 125,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 20.0,
+                "FrameIndex": 130,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -1.0,
+                "FrameIndex": 135,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -23.0,
+                "FrameIndex": 140,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -44.0,
+                "FrameIndex": 145,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -63.0,
+                "FrameIndex": 150,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -85.0,
+                "FrameIndex": 155,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -106.0,
+                "FrameIndex": 160,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -127.0,
+                "FrameIndex": 165,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -147.0,
+                "FrameIndex": 170,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -169.0,
+                "FrameIndex": 175,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -188.0,
+                "FrameIndex": 180,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -210.0,
+                "FrameIndex": 185,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -231.0,
+                "FrameIndex": 190,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -252.0,
+                "FrameIndex": 195,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -273.0,
+                "FrameIndex": 200,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -296.0,
+                "FrameIndex": 205,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -1005000831,
+            "Property": "Alpha",
+            "Frames": [
+              {
+                "Value": 0,
+                "FrameIndex": 110,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 102,
+                "FrameIndex": 115,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 204,
+                "FrameIndex": 200,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 0,
+                "FrameIndex": 205,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -2135321360,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": -1.9982,
+                "Y": 104.0002,
+                "FrameIndex": 115,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 83.0,
+                "FrameIndex": 120,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 60.0,
+                "FrameIndex": 125,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 41.0,
+                "FrameIndex": 130,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 20.0,
+                "FrameIndex": 135,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -1.0,
+                "FrameIndex": 140,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -23.0,
+                "FrameIndex": 145,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -44.0,
+                "FrameIndex": 150,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -63.0,
+                "FrameIndex": 155,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -85.0,
+                "FrameIndex": 160,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -106.0,
+                "FrameIndex": 165,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -127.0,
+                "FrameIndex": 170,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -147.0,
+                "FrameIndex": 175,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -169.0,
+                "FrameIndex": 180,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -188.0,
+                "FrameIndex": 185,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -210.0,
+                "FrameIndex": 190,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -231.0,
+                "FrameIndex": 195,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -252.0,
+                "FrameIndex": 200,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -273.0,
+                "FrameIndex": 205,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -296.0,
+                "FrameIndex": 210,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -2135321360,
+            "Property": "Alpha",
+            "Frames": [
+              {
+                "Value": 0,
+                "FrameIndex": 115,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 51,
+                "FrameIndex": 120,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 127,
+                "FrameIndex": 205,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 0,
+                "FrameIndex": 210,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 2002592770,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": -1.9982,
+                "Y": 104.0002,
+                "FrameIndex": 105,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 83.0,
+                "FrameIndex": 110,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 60.0,
+                "FrameIndex": 115,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 41.0,
+                "FrameIndex": 120,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 20.0,
+                "FrameIndex": 125,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -1.0,
+                "FrameIndex": 130,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -23.0,
+                "FrameIndex": 135,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -44.0,
+                "FrameIndex": 140,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -63.0,
+                "FrameIndex": 145,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -85.0,
+                "FrameIndex": 150,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -106.0,
+                "FrameIndex": 155,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -127.0,
+                "FrameIndex": 160,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -147.0,
+                "FrameIndex": 165,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -169.0,
+                "FrameIndex": 170,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -188.0,
+                "FrameIndex": 175,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -210.0,
+                "FrameIndex": 180,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -231.0,
+                "FrameIndex": 185,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -252.0,
+                "FrameIndex": 190,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -273.0,
+                "FrameIndex": 195,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -296.0,
+                "FrameIndex": 200,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 2002592770,
+            "Property": "Alpha",
+            "Frames": [
+              {
+                "Value": 0,
+                "FrameIndex": 105,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 51,
+                "FrameIndex": 110,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 127,
+                "FrameIndex": 195,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 0,
+                "FrameIndex": 200,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -1445760382,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": false,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              },
+              {
+                "Value": true,
+                "FrameIndex": 105,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1005789107,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": -1.9982,
+                "Y": 104.0002,
+                "FrameIndex": 160,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 83.0,
+                "FrameIndex": 165,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 60.0,
+                "FrameIndex": 170,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 41.0,
+                "FrameIndex": 175,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 20.0,
+                "FrameIndex": 180,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -1.0,
+                "FrameIndex": 185,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -23.0,
+                "FrameIndex": 190,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -44.0,
+                "FrameIndex": 195,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -63.0,
+                "FrameIndex": 200,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -85.0,
+                "FrameIndex": 205,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -106.0,
+                "FrameIndex": 210,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -127.0,
+                "FrameIndex": 215,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -147.0,
+                "FrameIndex": 220,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -169.0,
+                "FrameIndex": 225,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -188.0,
+                "FrameIndex": 230,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -210.0,
+                "FrameIndex": 235,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -231.0,
+                "FrameIndex": 240,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -252.0,
+                "FrameIndex": 245,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -273.0,
+                "FrameIndex": 250,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -296.0,
+                "FrameIndex": 255,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1005789107,
+            "Property": "Alpha",
+            "Frames": [
+              {
+                "Value": 0,
+                "FrameIndex": 160,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 102,
+                "FrameIndex": 165,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 204,
+                "FrameIndex": 250,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 0,
+                "FrameIndex": 255,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -965654880,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": -1.9982,
+                "Y": 104.0002,
+                "FrameIndex": 165,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 83.0,
+                "FrameIndex": 170,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 60.0,
+                "FrameIndex": 175,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 41.0,
+                "FrameIndex": 180,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 20.0,
+                "FrameIndex": 185,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -1.0,
+                "FrameIndex": 190,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -23.0,
+                "FrameIndex": 195,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -44.0,
+                "FrameIndex": 200,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -63.0,
+                "FrameIndex": 205,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -85.0,
+                "FrameIndex": 210,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -106.0,
+                "FrameIndex": 215,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -127.0,
+                "FrameIndex": 220,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -147.0,
+                "FrameIndex": 225,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -169.0,
+                "FrameIndex": 230,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -188.0,
+                "FrameIndex": 235,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -210.0,
+                "FrameIndex": 240,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -231.0,
+                "FrameIndex": 245,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -252.0,
+                "FrameIndex": 250,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -273.0,
+                "FrameIndex": 255,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -296.0,
+                "FrameIndex": 260,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -965654880,
+            "Property": "Alpha",
+            "Frames": [
+              {
+                "Value": 0,
+                "FrameIndex": 165,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 51,
+                "FrameIndex": 170,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 127,
+                "FrameIndex": 255,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 0,
+                "FrameIndex": 260,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -1866452804,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": -1.9982,
+                "Y": 104.0002,
+                "FrameIndex": 155,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 83.0,
+                "FrameIndex": 160,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 60.0,
+                "FrameIndex": 165,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 41.0,
+                "FrameIndex": 170,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 20.0,
+                "FrameIndex": 175,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -1.0,
+                "FrameIndex": 180,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -23.0,
+                "FrameIndex": 185,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -44.0,
+                "FrameIndex": 190,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -63.0,
+                "FrameIndex": 195,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -85.0,
+                "FrameIndex": 200,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -106.0,
+                "FrameIndex": 205,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -127.0,
+                "FrameIndex": 210,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -147.0,
+                "FrameIndex": 215,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -169.0,
+                "FrameIndex": 220,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -188.0,
+                "FrameIndex": 225,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -210.0,
+                "FrameIndex": 230,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -231.0,
+                "FrameIndex": 235,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -252.0,
+                "FrameIndex": 240,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -273.0,
+                "FrameIndex": 245,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -296.0,
+                "FrameIndex": 250,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -1866452804,
+            "Property": "Alpha",
+            "Frames": [
+              {
+                "Value": 0,
+                "FrameIndex": 155,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 51,
+                "FrameIndex": 160,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 127,
+                "FrameIndex": 245,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 0,
+                "FrameIndex": 250,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 972466963,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": false,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              },
+              {
+                "Value": true,
+                "FrameIndex": 105,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 707843500,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": -1.9982,
+                "Y": 104.0002,
+                "FrameIndex": 55,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 83.0,
+                "FrameIndex": 60,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 60.0,
+                "FrameIndex": 65,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 41.0,
+                "FrameIndex": 70,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 20.0,
+                "FrameIndex": 75,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -1.0,
+                "FrameIndex": 80,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -23.0,
+                "FrameIndex": 85,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -44.0,
+                "FrameIndex": 90,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -63.0,
+                "FrameIndex": 95,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -85.0,
+                "FrameIndex": 100,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -106.0,
+                "FrameIndex": 105,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -127.0,
+                "FrameIndex": 110,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -147.0,
+                "FrameIndex": 115,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -169.0,
+                "FrameIndex": 120,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -188.0,
+                "FrameIndex": 125,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -210.0,
+                "FrameIndex": 130,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -231.0,
+                "FrameIndex": 135,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -252.0,
+                "FrameIndex": 140,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -273.0,
+                "FrameIndex": 145,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -296.0,
+                "FrameIndex": 150,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 707843500,
+            "Property": "Alpha",
+            "Frames": [
+              {
+                "Value": 0,
+                "FrameIndex": 55,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 102,
+                "FrameIndex": 60,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 204,
+                "FrameIndex": 145,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 0,
+                "FrameIndex": 150,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -1162638176,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": -1.9982,
+                "Y": 104.0002,
+                "FrameIndex": 60,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 83.0,
+                "FrameIndex": 65,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 60.0,
+                "FrameIndex": 70,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 41.0,
+                "FrameIndex": 75,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 20.0,
+                "FrameIndex": 80,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -1.0,
+                "FrameIndex": 85,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -23.0,
+                "FrameIndex": 90,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -44.0,
+                "FrameIndex": 95,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -63.0,
+                "FrameIndex": 100,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -85.0,
+                "FrameIndex": 105,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -106.0,
+                "FrameIndex": 110,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -127.0,
+                "FrameIndex": 115,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -147.0,
+                "FrameIndex": 120,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -169.0,
+                "FrameIndex": 125,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -188.0,
+                "FrameIndex": 130,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -210.0,
+                "FrameIndex": 135,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -231.0,
+                "FrameIndex": 140,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -252.0,
+                "FrameIndex": 145,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -273.0,
+                "FrameIndex": 150,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -296.0,
+                "FrameIndex": 155,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -1162638176,
+            "Property": "Alpha",
+            "Frames": [
+              {
+                "Value": 0,
+                "FrameIndex": 60,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 51,
+                "FrameIndex": 65,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 127,
+                "FrameIndex": 150,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 0,
+                "FrameIndex": 155,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1470530290,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": -1.9982,
+                "Y": 104.0002,
+                "FrameIndex": 50,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 83.0,
+                "FrameIndex": 55,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 60.0,
+                "FrameIndex": 60,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 41.0,
+                "FrameIndex": 65,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": 20.0,
+                "FrameIndex": 70,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -1.0,
+                "FrameIndex": 75,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -23.0,
+                "FrameIndex": 80,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -44.0,
+                "FrameIndex": 85,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -63.0,
+                "FrameIndex": 90,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -85.0,
+                "FrameIndex": 95,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -106.0,
+                "FrameIndex": 100,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -127.0,
+                "FrameIndex": 105,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -147.0,
+                "FrameIndex": 110,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -169.0,
+                "FrameIndex": 115,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -188.0,
+                "FrameIndex": 120,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -210.0,
+                "FrameIndex": 125,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -231.0,
+                "FrameIndex": 130,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -252.0,
+                "FrameIndex": 135,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -273.0,
+                "FrameIndex": 140,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -1.9982,
+                "Y": -296.0,
+                "FrameIndex": 145,
+                "EasingData": {
+                  "Type": 21
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1470530290,
+            "Property": "Alpha",
+            "Frames": [
+              {
+                "Value": 0,
+                "FrameIndex": 50,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 51,
+                "FrameIndex": 55,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 127,
+                "FrameIndex": 140,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              },
+              {
+                "Value": 0,
+                "FrameIndex": 145,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "IntFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1460334850,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": false,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              },
+              {
+                "Value": true,
+                "FrameIndex": 105,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -521353117,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": false,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              },
+              {
+                "Value": true,
+                "FrameIndex": 105,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          }
+        ],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [
+        {
+          "StartIndex": 0,
+          "EndIndex": 104,
+          "Name": "GAME",
+          "ctype": "AnimationInfoData"
+        },
+        {
+          "StartIndex": 105,
+          "EndIndex": 210,
+          "Name": "BONUS",
+          "ctype": "AnimationInfoData"
+        }
+      ],
+      "ObjectData": {
+        "Tag": 402,
+        "Children": [
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Tag": 405,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "PlistSubImage",
+                  "Path": "game_reels_bg.jpg",
+                  "Plist": "_bitmaps/gameBigwinBonus2.plist"
+                },
+                "BlendFunc": {
+                  "Src": 770,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -368.0,
+                "RightMargin": -368.0,
+                "TopMargin": -279.5,
+                "BottomMargin": -279.5,
+                "Tag": 403,
+                "ActionTag": 1707993436,
+                "Size": {
+                  "X": 736.0,
+                  "Y": 559.0
+                },
+                "Name": "gameReelsBg",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "PlistSubImage",
+                  "Path": "reels_light_stripe.png",
+                  "Plist": "_bitmaps/gameBigwinBonus.plist"
+                },
+                "BlendFunc": {
+                  "Src": 770,
+                  "Dst": 1
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": -1.9982,
+                  "Y": -296.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 184,
+                  "G": 22,
+                  "B": 47
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -334.9982,
+                "RightMargin": -331.0018,
+                "TopMargin": 283.5,
+                "BottomMargin": -308.5,
+                "Tag": 404,
+                "ActionTag": -1092467277,
+                "Size": {
+                  "X": 666.0,
+                  "Y": 25.0
+                },
+                "Alpha": 0,
+                "Name": "reelsLightStripe",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "PlistSubImage",
+                  "Path": "reels_light_stripe.png",
+                  "Plist": "_bitmaps/gameBigwinBonus.plist"
+                },
+                "BlendFunc": {
+                  "Src": 770,
+                  "Dst": 1
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": -1.9982,
+                  "Y": -296.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 184,
+                  "G": 22,
+                  "B": 47
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -334.9982,
+                "RightMargin": -331.0018,
+                "TopMargin": 283.5,
+                "BottomMargin": -308.5,
+                "Tag": 406,
+                "ActionTag": -1160712691,
+                "Size": {
+                  "X": 666.0,
+                  "Y": 25.0
+                },
+                "Alpha": 0,
+                "Name": "reelsLightStripeSide1",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "PlistSubImage",
+                  "Path": "reels_light_stripe.png",
+                  "Plist": "_bitmaps/gameBigwinBonus.plist"
+                },
+                "BlendFunc": {
+                  "Src": 770,
+                  "Dst": 1
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": -1.9982,
+                  "Y": -296.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 184,
+                  "G": 22,
+                  "B": 47
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -334.9982,
+                "RightMargin": -331.0018,
+                "TopMargin": 283.5,
+                "BottomMargin": -308.5,
+                "Tag": 407,
+                "ActionTag": -774093939,
+                "Size": {
+                  "X": 666.0,
+                  "Y": 25.0
+                },
+                "Alpha": 0,
+                "Name": "reelsLightStripeSide2",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": 1351533667,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "VisibleForFrame": false,
+            "Name": "reelsGame",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Tag": 408,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "PlistSubImage",
+                  "Path": "bonus_reels_bg.jpg",
+                  "Plist": "_bitmaps/gameBigwinBonus1.plist"
+                },
+                "BlendFunc": {
+                  "Src": 770,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -368.0,
+                "RightMargin": -368.0,
+                "TopMargin": -279.5,
+                "BottomMargin": -279.5,
+                "Tag": 409,
+                "ActionTag": -363204477,
+                "Size": {
+                  "X": 736.0,
+                  "Y": 559.0
+                },
+                "Name": "bonusReelsBg",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Tag": 413,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "PlistSubImage",
+                      "Path": "reels_light_stripe.png",
+                      "Plist": "_bitmaps/gameBigwinBonus.plist"
+                    },
+                    "BlendFunc": {
+                      "Src": 770,
+                      "Dst": 1
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -1.9982,
+                      "Y": 104.0002
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 184,
+                      "G": 22,
+                      "B": 47
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -334.9982,
+                    "RightMargin": -331.0018,
+                    "TopMargin": -116.5002,
+                    "BottomMargin": 91.5002,
+                    "Tag": 415,
+                    "ActionTag": -1005000831,
+                    "Size": {
+                      "X": 666.0,
+                      "Y": 25.0
+                    },
+                    "Alpha": 0,
+                    "Name": "reelsLightStripe",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "PlistSubImage",
+                      "Path": "reels_light_stripe.png",
+                      "Plist": "_bitmaps/gameBigwinBonus.plist"
+                    },
+                    "BlendFunc": {
+                      "Src": 770,
+                      "Dst": 1
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -1.9982,
+                      "Y": 104.0002
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 184,
+                      "G": 22,
+                      "B": 47
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -334.9982,
+                    "RightMargin": -331.0018,
+                    "TopMargin": -116.5002,
+                    "BottomMargin": 91.5002,
+                    "Tag": 416,
+                    "ActionTag": -2135321360,
+                    "Size": {
+                      "X": 666.0,
+                      "Y": 25.0
+                    },
+                    "Alpha": 0,
+                    "Name": "reelsLightStripeSide1",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "PlistSubImage",
+                      "Path": "reels_light_stripe.png",
+                      "Plist": "_bitmaps/gameBigwinBonus.plist"
+                    },
+                    "BlendFunc": {
+                      "Src": 770,
+                      "Dst": 1
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -1.9982,
+                      "Y": 104.0002
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 184,
+                      "G": 22,
+                      "B": 47
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -334.9982,
+                    "RightMargin": -331.0018,
+                    "TopMargin": -116.5002,
+                    "BottomMargin": 91.5002,
+                    "Tag": 417,
+                    "ActionTag": 2002592770,
+                    "Size": {
+                      "X": 666.0,
+                      "Y": 25.0
+                    },
+                    "Alpha": 0,
+                    "Name": "reelsLightStripeSide2",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": -1445760382,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ray1",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Tag": 418,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "PlistSubImage",
+                      "Path": "reels_light_stripe.png",
+                      "Plist": "_bitmaps/gameBigwinBonus.plist"
+                    },
+                    "BlendFunc": {
+                      "Src": 770,
+                      "Dst": 1
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -1.9982,
+                      "Y": 104.0002
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 184,
+                      "G": 22,
+                      "B": 47
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -334.9982,
+                    "RightMargin": -331.0018,
+                    "TopMargin": -116.5002,
+                    "BottomMargin": 91.5002,
+                    "Tag": 419,
+                    "ActionTag": 1005789107,
+                    "Size": {
+                      "X": 666.0,
+                      "Y": 25.0
+                    },
+                    "Alpha": 0,
+                    "Name": "reelsLightStripe",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "PlistSubImage",
+                      "Path": "reels_light_stripe.png",
+                      "Plist": "_bitmaps/gameBigwinBonus.plist"
+                    },
+                    "BlendFunc": {
+                      "Src": 770,
+                      "Dst": 1
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -1.9982,
+                      "Y": 104.0002
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 184,
+                      "G": 22,
+                      "B": 47
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -334.9982,
+                    "RightMargin": -331.0018,
+                    "TopMargin": -116.5002,
+                    "BottomMargin": 91.5002,
+                    "Tag": 420,
+                    "ActionTag": -965654880,
+                    "Size": {
+                      "X": 666.0,
+                      "Y": 25.0
+                    },
+                    "Alpha": 0,
+                    "Name": "reelsLightStripeSide1",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "PlistSubImage",
+                      "Path": "reels_light_stripe.png",
+                      "Plist": "_bitmaps/gameBigwinBonus.plist"
+                    },
+                    "BlendFunc": {
+                      "Src": 770,
+                      "Dst": 1
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -1.9982,
+                      "Y": 104.0002
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 184,
+                      "G": 22,
+                      "B": 47
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -334.9982,
+                    "RightMargin": -331.0018,
+                    "TopMargin": -116.5002,
+                    "BottomMargin": 91.5002,
+                    "Tag": 421,
+                    "ActionTag": -1866452804,
+                    "Size": {
+                      "X": 666.0,
+                      "Y": 25.0
+                    },
+                    "Alpha": 0,
+                    "Name": "reelsLightStripeSide2",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": 972466963,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ray2",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Tag": 422,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "PlistSubImage",
+                      "Path": "reels_light_stripe.png",
+                      "Plist": "_bitmaps/gameBigwinBonus.plist"
+                    },
+                    "BlendFunc": {
+                      "Src": 770,
+                      "Dst": 1
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -1.9982,
+                      "Y": -106.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 184,
+                      "G": 22,
+                      "B": 47
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -334.9982,
+                    "RightMargin": -331.0018,
+                    "TopMargin": 93.5,
+                    "BottomMargin": -118.5,
+                    "Tag": 423,
+                    "ActionTag": 707843500,
+                    "Size": {
+                      "X": 666.0,
+                      "Y": 25.0
+                    },
+                    "Alpha": 156,
+                    "Name": "reelsLightStripe",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "PlistSubImage",
+                      "Path": "reels_light_stripe.png",
+                      "Plist": "_bitmaps/gameBigwinBonus.plist"
+                    },
+                    "BlendFunc": {
+                      "Src": 770,
+                      "Dst": 1
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -1.9982,
+                      "Y": -85.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 184,
+                      "G": 22,
+                      "B": 47
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -334.9982,
+                    "RightMargin": -331.0018,
+                    "TopMargin": 72.5,
+                    "BottomMargin": -97.5,
+                    "Tag": 424,
+                    "ActionTag": -1162638176,
+                    "Size": {
+                      "X": 666.0,
+                      "Y": 25.0
+                    },
+                    "Alpha": 86,
+                    "Name": "reelsLightStripeSide1",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "PlistSubImage",
+                      "Path": "reels_light_stripe.png",
+                      "Plist": "_bitmaps/gameBigwinBonus.plist"
+                    },
+                    "BlendFunc": {
+                      "Src": 770,
+                      "Dst": 1
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -1.9982,
+                      "Y": -127.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 184,
+                      "G": 22,
+                      "B": 47
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -334.9982,
+                    "RightMargin": -331.0018,
+                    "TopMargin": 114.5,
+                    "BottomMargin": -139.5,
+                    "Tag": 425,
+                    "ActionTag": 1470530290,
+                    "Size": {
+                      "X": 666.0,
+                      "Y": 25.0
+                    },
+                    "Alpha": 95,
+                    "Name": "reelsLightStripeSide2",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": 1460334850,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ray3",
+                "ctype": "SingleNodeObjectData"
+              }
+            ],
+            "ActionTag": -521353117,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "bonusGame",
+            "ctype": "SingleNodeObjectData"
+          }
+        ],
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Name": "Node",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "../_bitmaps/gameBigwinBonus.plist",
+        "../_bitmaps/gameBigwinBonus.png",
+        "../_bitmaps/gameBigwinBonus1.jpg",
+        "../_bitmaps/gameBigwinBonus1.plist",
+        "../_bitmaps/gameBigwinBonus2.jpg",
+        "../_bitmaps/gameBigwinBonus2.plist"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Node"
+}

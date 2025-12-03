@@ -101,9 +101,23 @@ function parseSizeString(str) {
   return { w: nums[0] || 0, h: nums[1] || 0 };
 }
 
+function toAbs(basePath, rel) {
+  const clean = cleanPath(rel || "");
+  const baseUrl = new URL(basePath, window.location.href);
+  return new URL(clean, baseUrl).toString();
+}
+
+function resolvePathRelative(p, basePath) {
+  if (!p) return "";
+  const clean = cleanPath(p);
+  if (clean.startsWith("/")) return clean;
+  return toAbs(basePath, clean);
+}
+
 const plistCache = new Map();
 const spriteCache = new Map();
 let BASE_PATH = "../res/exportJosn/";
+let Y_AXIS_INVERTED = true; // true = Cocos styl Y nahoru (výchozí pro naše exporty), false = Y dolů
 
 async function loadAtlas(plistPath) {
   if (plistCache.has(plistPath)) return plistCache.get(plistPath);
@@ -120,15 +134,32 @@ async function loadAtlas(plistPath) {
 
 async function resolveSprite(fileData, basePath = BASE_PATH) {
   const plistRel = cleanPath(fileData.Plist || "");
-  const plistPath = `${basePath}${plistRel}`;
-  const atlas = await loadAtlas(plistPath);
+  const plistCandidates = [
+    toAbs(basePath, plistRel),
+    toAbs(basePath, `../${plistRel}`),
+    toAbs(basePath, `../../${plistRel}`),
+    plistRel,
+  ];
+  let atlas;
+  let plistPath;
+  let lastErr;
+  for (const p of plistCandidates) {
+    try {
+      atlas = await loadAtlas(p);
+      plistPath = p;
+      break;
+    } catch (e) {
+      lastErr = e;
+    }
+  }
+  if (!atlas) throw lastErr || new Error("Atlas not found");
 
   const frameName = fileData.Path;
   const key = `${plistPath}|${frameName}`;
   if (spriteCache.has(key)) return spriteCache.get(key);
 
   const meta = atlas.frames.get(frameName);
-  if (!meta) throw new Error(`Frame ${frameName} not in ${plistUsed}`);
+  if (!meta) throw new Error(`Frame ${frameName} not in ${plistPath}`);
   const [fx, fy, fw, fh] = parseTuple(meta.frame);
   const [cx, cy, cw, ch] = parseTuple(meta.sourceColorRect);
   const [sw, sh] = parseTuple(meta.sourceSize);
@@ -146,11 +177,11 @@ async function resolveSprite(fileData, basePath = BASE_PATH) {
   return result;
 }
 
-function assetPath(fileData) {
+function assetPath(fileData, basePath = BASE_PATH) {
   if (!fileData) return null;
   if (fileData.Type === "Normal") {
     const base = cleanPath(fileData.Path || "");
-    return `${BASE_PATH}${base}`;
+    return resolvePathRelative(base, basePath);
   }
   return null;
 }
@@ -187,25 +218,23 @@ function applyTransform(el, state) {
     const y = state.Position?.Y || 0;
     const sx = state.Scale?.X ?? 1;
     const sy = state.Scale?.Y ?? 1;
-    const rot = state.RotationSkewX ?? 0;
+    const rotX = state.RotationSkewX ?? 0;
+    const rotY = state.RotationSkewY ?? rotX;
+    const rot = (rotX + rotY) / 2; // sjednocená rotace z obou složek
     const size = el.__size || { w: 0, h: 0 };
 
     // 1. POZICE (Position)
-    // Cocos má Y nahoru, CSS dolů. Proto top = -y.
-    // Musíme také zohlednit Anchor Point pro umístění levého horního rohu divu.
-    // V Cocos ay=0 je spodek. V CSS top=0 je vršek.
-    // Výpočet: -y (otočení osy) - (vzdálenost od anchoru k horní hraně v CSS)
     const left = x - ax * size.w;
-    const top = -y - (1 - ay) * size.h;
+    const top = Y_AXIS_INVERTED
+      ? -y - (1 - ay) * size.h // Y nahoru
+      : y - ay * size.h; // Y dolů
 
     el.style.left = `${left}px`;
     el.style.top = `${top}px`;
 
     // 2. TRANSFORM ORIGIN (Klíčová oprava)
-    // Cocos Anchor Y: 0 = Spodek, 1 = Vršek
-    // CSS Origin Y: 0% = Vršek, 100% = Spodek
-    // Proto musíme Y invertovat: (1 - ay)
-    el.style.transformOrigin = `${ax * 100}% ${(1 - ay) * 100}%`;
+    const originY = Y_AXIS_INVERTED ? (1 - ay) : ay;
+    el.style.transformOrigin = `${ax * 100}% ${originY * 100}%`;
 
     // 3. TRANSFORMACE
     el.style.transform = `scale(${sx}, ${sy}) rotate(${rot}deg)`;
@@ -215,6 +244,11 @@ function applyTransform(el, state) {
     }
     if (typeof state.VisibleForFrame === "boolean") {
         el.style.visibility = state.VisibleForFrame ? "visible" : "hidden";
+    }
+    if (state.BlendFunc) {
+        const { Src, Dst } = state.BlendFunc;
+        const additive = Src === 770 && (Dst === 1 || Dst === 771);
+        el.classList.toggle("blend-add", additive);
     }
 }
 
@@ -293,7 +327,10 @@ function updateProperty(state, property, sample) {
   if (!sample) return;
   if (property === "Position") state.Position = sample;
   if (property === "Scale") state.Scale = sample;
-  if (property === "RotationSkew") state.RotationSkewX = sample.X;
+  if (property === "RotationSkew") {
+    state.RotationSkewX = sample.X;
+    state.RotationSkewY = sample.Y ?? sample.X;
+  }
   if (property === "Alpha") state.Alpha = sample.Value;
   if (property === "VisibleForFrame") state.VisibleForFrame = sample.Value;
   if (property === "FileData" && sample.TextureFile) state.FileData = sample.TextureFile;
@@ -402,7 +439,7 @@ async function buildNodes(node, parentEl, actionMap, basePath, zIndex = 0) {
         }
     } else {
         // --- STANDARDNÍ OBRÁZEK ---
-        const src = assetPath(file);
+        const src = assetPath(file, basePath);
         if (src) {
             el.style.backgroundImage = `url(${src})`;
             el.style.backgroundSize = "100% 100%";
@@ -414,7 +451,8 @@ async function buildNodes(node, parentEl, actionMap, basePath, zIndex = 0) {
         for (let idx = 0; idx < node.Children.length; idx++) {
             const child = node.Children[idx];
             if (child.ctype === "ProjectNodeObjectData" && child.FileData?.Path) {
-                const nested = await loadJson(`${basePath}${cleanPath(child.FileData.Path)}`);
+                const nestedPath = resolvePathRelative(child.FileData.Path, basePath);
+                const nested = await loadJson(nestedPath);
                 const nestedObj = nested.Content.Content.ObjectData;
                 if (child.Name) nestedObj.Name = child.Name;
                 nestedObj.Position = child.Position;
@@ -436,6 +474,10 @@ async function main(jsonPath = "../res/exportJosn/jackpot.json") {
   if (!root || !stage) return;
 
   const { data, base } = await loadJsonWithBase([jsonPath]);
+  const coordType = data?.Content?.Content?.CoordinateType;
+  // Výchozí je osa Y nahoru (invertovaná pro CSS). Přepneme jen při explicitní informaci v JSONu.
+  Y_AXIS_INVERTED = coordType === "yDown" ? false : true;
+  BASE_PATH = base;
   const content = data.Content.Content;
   const animation = content.Animation;
   const objectData = content.ObjectData;
@@ -523,8 +565,5 @@ async function main(jsonPath = "../res/exportJosn/jackpot.json") {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  window.jackpotReady = main("../res/Bliss/common/bigwinAnim.json").catch((err) => {
-    console.error(err);
-    throw err;
-  });
+  // main is invoked from app.js
 });
