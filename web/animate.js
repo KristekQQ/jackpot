@@ -4,11 +4,19 @@ async function loadJson(path) {
   return res.json();
 }
 
-async function loadJsonFallback(paths) {
+async function loadText(path) {
+  const res = await fetch(path);
+  if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
+  return res.text();
+}
+
+async function loadJsonWithBase(paths) {
   let lastErr;
   for (const p of paths) {
     try {
-      return await loadJson(p);
+      const data = await loadJson(p);
+      const base = p.slice(0, p.lastIndexOf("/") + 1);
+      return { data, base };
     } catch (e) {
       lastErr = e;
     }
@@ -16,14 +24,13 @@ async function loadJsonFallback(paths) {
   throw lastErr || new Error("Failed to load JSON from provided paths");
 }
 
-async function loadText(path) {
-  const res = await fetch(path);
-  if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
-  return res.text();
-}
-
 function parseTuple(str) {
   return Array.from(str.matchAll(/-?\d+\.?\d*/g)).map((m) => parseFloat(m[0]));
+}
+
+function cleanPath(p) {
+  if (!p) return "";
+  return p.replace(/^\.?\/+/, "");
 }
 
 function parsePlistFrames(xmlText) {
@@ -96,6 +103,7 @@ function parseSizeString(str) {
 
 const plistCache = new Map();
 const spriteCache = new Map();
+let BASE_PATH = "../res/exportJosn/";
 
 async function loadAtlas(plistPath) {
   if (plistCache.has(plistPath)) return plistCache.get(plistPath);
@@ -110,30 +118,13 @@ async function loadAtlas(plistPath) {
   return atlas;
 }
 
-async function resolveSprite(fileData) {
-  const plistRel = fileData.Plist || "";
-  const candidates = [
-    `../res/exportJosn/${plistRel}`,
-    `/res/exportJosn/${plistRel}`,
-    `./res/exportJosn/${plistRel}`,
-    `../res/cocos/cocosstudio/${plistRel}`,
-  ];
-  let atlas;
-  let plistUsed;
-  let lastErr;
-  for (const p of candidates) {
-    try {
-      atlas = await loadAtlas(p);
-      plistUsed = p;
-      break;
-    } catch (e) {
-      lastErr = e;
-    }
-  }
-  if (!atlas) throw lastErr || new Error("Atlas not found");
+async function resolveSprite(fileData, basePath = BASE_PATH) {
+  const plistRel = cleanPath(fileData.Plist || "");
+  const plistPath = `${basePath}${plistRel}`;
+  const atlas = await loadAtlas(plistPath);
 
   const frameName = fileData.Path;
-  const key = `${plistUsed}|${frameName}`;
+  const key = `${plistPath}|${frameName}`;
   if (spriteCache.has(key)) return spriteCache.get(key);
 
   const meta = atlas.frames.get(frameName);
@@ -158,8 +149,8 @@ async function resolveSprite(fileData) {
 function assetPath(fileData) {
   if (!fileData) return null;
   if (fileData.Type === "Normal") {
-    const parts = fileData.Path.split(/[\\/]/);
-    return `assets/${parts[parts.length - 1]}`;
+    const base = cleanPath(fileData.Path || "");
+    return `${BASE_PATH}${base}`;
   }
   return null;
 }
@@ -309,7 +300,7 @@ function updateProperty(state, property, sample) {
   if (property === "BlendFunc") state.BlendFunc = sample;
 }
 
-async function buildNodes(node, parentEl, actionMap, assetsBase = "assets", zIndex = 0) {
+async function buildNodes(node, parentEl, actionMap, basePath, zIndex = 0) {
     const el = createElementForNode(node);
     const state = extractInitialState(node);
     el.__baseState = state;
@@ -325,7 +316,7 @@ async function buildNodes(node, parentEl, actionMap, assetsBase = "assets", zInd
     const file = node.FileData;
     if (file && file.Type === "PlistSubImage") {
         try {
-            const atlas = await resolveSprite(file);
+            const atlas = await resolveSprite(file, basePath);
 
             // 1. Nastavíme HLAVNÍMU elementu plnou (neoříznutou) velikost
             const fullW = atlas.sourceSize.sw;
@@ -423,7 +414,7 @@ async function buildNodes(node, parentEl, actionMap, assetsBase = "assets", zInd
         for (let idx = 0; idx < node.Children.length; idx++) {
             const child = node.Children[idx];
             if (child.ctype === "ProjectNodeObjectData" && child.FileData?.Path) {
-                const nested = await loadJson(`../res/exportJosn/${child.FileData.Path}`);
+                const nested = await loadJson(`${basePath}${cleanPath(child.FileData.Path)}`);
                 const nestedObj = nested.Content.Content.ObjectData;
                 if (child.Name) nestedObj.Name = child.Name;
                 nestedObj.Position = child.Position;
@@ -431,24 +422,20 @@ async function buildNodes(node, parentEl, actionMap, assetsBase = "assets", zInd
                 nestedObj.AnchorPoint = child.AnchorPoint;
                 nestedObj.ActionTag = child.ActionTag;
                 nestedObj.Alpha = child.Alpha;
-                await buildNodes(nestedObj, el, actionMap, assetsBase, zIndex + idx + 1);
+                await buildNodes(nestedObj, el, actionMap, basePath, zIndex + idx + 1);
             } else {
-                await buildNodes(child, el, actionMap, assetsBase, zIndex + idx + 1);
+                await buildNodes(child, el, actionMap, basePath, zIndex + idx + 1);
             }
         }
     }
 }
 
-async function main() {
+async function main(jsonPath = "../res/exportJosn/jackpot.json") {
   const root = document.querySelector("#scene-origin");
   const stage = document.querySelector("#stage");
   if (!root || !stage) return;
 
-  const data = await loadJsonFallback([
-    "../res/exportJosn/jackpot.json",
-    "/res/exportJosn/jackpot.json",
-    "./res/exportJosn/jackpot.json",
-  ]);
+  const { data, base } = await loadJsonWithBase([jsonPath]);
   const content = data.Content.Content;
   const animation = content.Animation;
   const objectData = content.ObjectData;
@@ -461,7 +448,7 @@ async function main() {
   }
 
   const actionMap = new Map();
-  await buildNodes(objectData, root, actionMap);
+  await buildNodes(objectData, root, actionMap, base);
 
   const fps = 60;
   const resize = () => {
@@ -536,7 +523,7 @@ async function main() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  window.jackpotReady = main().catch((err) => {
+  window.jackpotReady = main("../res/Bliss/common/bigwinAnim.json").catch((err) => {
     console.error(err);
     throw err;
   });
