@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const player = await main().catch((err) => {console.error(err);throw err;});
+    const player = await window.jackpotReady;
     if (!player) return;
 
     while (true) {

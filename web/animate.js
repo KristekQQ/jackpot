@@ -16,19 +16,150 @@ async function loadJsonFallback(paths) {
   throw lastErr || new Error("Failed to load JSON from provided paths");
 }
 
-function baseName(path) {
-  if (!path) return path;
-  const parts = path.split(/[\\/]/);
-  return parts[parts.length - 1];
+async function loadText(path) {
+  const res = await fetch(path);
+  if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
+  return res.text();
+}
+
+function parseTuple(str) {
+  return Array.from(str.matchAll(/-?\d+\.?\d*/g)).map((m) => parseFloat(m[0]));
+}
+
+function parsePlistFrames(xmlText) {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(xmlText, "application/xml");
+    const frames = new Map();
+    const keys = Array.from(doc.querySelectorAll("plist > dict > key"));
+    let textureFileName = "";
+    let metaSize = "";
+
+    for (let i = 0; i < keys.length; i++) {
+        const key = keys[i];
+        const valNode = key.nextElementSibling;
+
+        // Načtení framů
+        if (key.textContent === "frames" && valNode?.tagName === "dict") {
+            let node = valNode.firstElementChild;
+            while (node) {
+                if (node.tagName === "key") {
+                    const name = node.textContent;
+                    const dict = node.nextElementSibling;
+                    const entry = {};
+                    let c = dict.firstElementChild;
+                    while (c) {
+                        if (c.tagName === "key") {
+                            const k = c.textContent;
+                            const vNode = c.nextElementSibling;
+                            const vText = vNode?.textContent || "";
+
+                            if (k === "frame") entry.frame = vText;
+                            if (k === "sourceColorRect") entry.sourceColorRect = vText;
+                            if (k === "sourceSize") entry.sourceSize = vText;
+
+                            // --- OPRAVA ZDE ---
+                            // Kontrolujeme tagName, protože v plistu je <true/> nebo <false/>
+                            if (k === "rotated") {
+                                entry.rotated = vNode.tagName === "true";
+                            }
+                            // ------------------
+                        }
+                        c = c.nextElementSibling;
+                    }
+                    frames.set(name, entry);
+                }
+                node = node.nextElementSibling;
+            }
+        }
+
+        // Metadata
+        if (key.textContent === "metadata" && valNode?.tagName === "dict") {
+            let c = valNode.firstElementChild;
+            while (c) {
+                if (c.tagName === "key" && c.textContent === "textureFileName") {
+                    textureFileName = c.nextElementSibling?.textContent || "";
+                }
+                if (c.tagName === "key" && c.textContent === "size") {
+                    metaSize = c.nextElementSibling?.textContent || "";
+                }
+                c = c.nextElementSibling;
+            }
+        }
+    }
+    return { frames, textureFileName, metaSize };
+}
+
+function parseSizeString(str) {
+  const nums = parseTuple(str);
+  return { w: nums[0] || 0, h: nums[1] || 0 };
+}
+
+const plistCache = new Map();
+const spriteCache = new Map();
+
+async function loadAtlas(plistPath) {
+  if (plistCache.has(plistPath)) return plistCache.get(plistPath);
+  const plistText = await loadText(plistPath);
+  const parsed = parsePlistFrames(plistText);
+  const baseDir = plistPath.split("/").slice(0, -1).join("/");
+  const texName = parsed.textureFileName || plistPath.replace(".plist", ".png").split("/").pop();
+  const atlasPath = texName ? `${baseDir}/${texName}` : plistPath.replace(".plist", ".png");
+  const atlasSize = parseSizeString(parsed.metaSize);
+  const atlas = { frames: parsed.frames, atlasPath, atlasSize };
+  plistCache.set(plistPath, atlas);
+  return atlas;
+}
+
+async function resolveSprite(fileData) {
+  const plistRel = fileData.Plist || "";
+  const candidates = [
+    `../res/exportJosn/${plistRel}`,
+    `/res/exportJosn/${plistRel}`,
+    `./res/exportJosn/${plistRel}`,
+    `../res/cocos/cocosstudio/${plistRel}`,
+  ];
+  let atlas;
+  let plistUsed;
+  let lastErr;
+  for (const p of candidates) {
+    try {
+      atlas = await loadAtlas(p);
+      plistUsed = p;
+      break;
+    } catch (e) {
+      lastErr = e;
+    }
+  }
+  if (!atlas) throw lastErr || new Error("Atlas not found");
+
+  const frameName = fileData.Path;
+  const key = `${plistUsed}|${frameName}`;
+  if (spriteCache.has(key)) return spriteCache.get(key);
+
+  const meta = atlas.frames.get(frameName);
+  if (!meta) throw new Error(`Frame ${frameName} not in ${plistUsed}`);
+  const [fx, fy, fw, fh] = parseTuple(meta.frame);
+  const [cx, cy, cw, ch] = parseTuple(meta.sourceColorRect);
+  const [sw, sh] = parseTuple(meta.sourceSize);
+  const rotated = meta.rotated;
+
+  const result = {
+    atlasPath: atlas.atlasPath,
+    atlasSize: { aw: atlas.atlasSize.w, ah: atlas.atlasSize.h },
+    frame: { fx, fy, fw, fh },
+    colorRect: { cx, cy, cw, ch },
+    sourceSize: { sw, sh },
+    rotated,
+  };
+  spriteCache.set(key, result);
+  return result;
 }
 
 function assetPath(fileData) {
   if (!fileData) return null;
-  if (fileData.Type === "PlistSubImage") {
-    return `assets/${fileData.Path}`;
-  }
   if (fileData.Type === "Normal") {
-    return `assets/${baseName(fileData.Path)}`;
+    const parts = fileData.Path.split(/[\\/]/);
+    return `assets/${parts[parts.length - 1]}`;
   }
   return null;
 }
@@ -40,21 +171,8 @@ function createElementForNode(node) {
   el.style.width = `${size.X}px`;
   el.style.height = `${size.Y}px`;
   el.__size = { w: size.X || 0, h: size.Y || 0 };
-
-  const blend = node.BlendFunc || {};
-  if (blend.Src === 770 && blend.Dst === 1) {
-    el.style.mixBlendMode = "screen"; // additive
-    el.classList.add("blend-add");
-  }
-
-  if (node.ctype === "SpriteObjectData" || node.ctype === "SingleNodeObjectData") {
-    const src = assetPath(node.FileData);
-    if (src) {
-      el.style.backgroundImage = `url(${src})`;
-      el.style.backgroundSize = "100% 100%";
-      el.style.backgroundRepeat = "no-repeat";
-    }
-  } else if (node.ctype === "TextObjectData") {
+  el.dataset.name = node.Name || "";
+  if (node.ctype === "TextObjectData") {
     el.textContent = node.LabelText || "";
     el.classList.add("text-node");
     el.style.fontSize = `${node.FontSize || 24}px`;
@@ -62,10 +180,6 @@ function createElementForNode(node) {
     el.style.textAlign = "center";
     el.style.whiteSpace = "nowrap";
   }
-
-  el.dataset.actionTag = node.ActionTag;
-  el.dataset.name = node.Name || "";
-  el.dataset.ctype = node.ctype;
   return el;
 }
 
@@ -133,41 +247,12 @@ function sampleFrame(frames, frameIndex) {
     switch (easing.Type) {
       case 0:
         return t;
-      case 1: // ease-in (quad)
+      case 1:
         return t * t;
-      case 2: // ease-out (quad)
+      case 2:
         return 1 - (1 - t) * (1 - t);
-      case 3: // ease-in-out (quad)
+      case 3:
         return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
-      case -1: {
-        // custom bezier with 4 control points
-        const pts = easing.Points || [];
-        if (pts.length === 4) {
-          const [p0, p1, p2, p3] = pts;
-          const cx = 3 * p0.X;
-          const bx = 3 * (p2.X - p0.X) - cx;
-          const ax = 1 - cx - bx;
-          const cy = 3 * p0.Y;
-          const by = 3 * (p2.Y - p0.Y) - cy;
-          const ay = 1 - cy - by;
-          const x = ((ax * t + bx) * t + cx) * t;
-          const y = ((ay * t + by) * t + cy) * t;
-          return x !== 0 ? y : t;
-        }
-        if (pts.length === 2) {
-          const [p0, p1] = pts;
-          const cx = 3 * p0.X;
-          const bx = 3 * p1.X - cx;
-          const ax = 1 - cx - bx;
-          const cy = 3 * p0.Y;
-          const by = 3 * p1.Y - cy;
-          const ay = 1 - cy - by;
-          const x = ((ax * t + bx) * t + cx) * t;
-          const y = ((ay * t + by) * t + cy) * t;
-          return x !== 0 ? y : t;
-        }
-        return t;
-      }
       default:
         return t;
     }
@@ -177,7 +262,7 @@ function sampleFrame(frames, frameIndex) {
     const b = frames[i + 1];
     if (frameIndex >= a.FrameIndex && frameIndex <= b.FrameIndex) {
       const t = (frameIndex - a.FrameIndex) / (b.FrameIndex - a.FrameIndex || 1);
-       const eased = ease(t, b.EasingData || a.EasingData);
+      const eased = ease(t, b.EasingData || a.EasingData);
       if (a.ctype === "PointFrameData") {
         return { X: a.X + (b.X - a.X) * eased, Y: a.Y + (b.Y - a.Y) * eased };
       }
@@ -225,36 +310,133 @@ function updateProperty(state, property, sample) {
 }
 
 async function buildNodes(node, parentEl, actionMap, assetsBase = "assets", zIndex = 0) {
-  const el = createElementForNode(node);
-  const state = extractInitialState(node);
-  el.__baseState = state;
-  el.classList.add("sprite");
-  el.style.zIndex = String(zIndex);
-  parentEl.appendChild(el);
-  const tag = node.ActionTag;
-  if (!actionMap.has(tag)) actionMap.set(tag, []);
-  actionMap.get(tag).push(el);
+    const el = createElementForNode(node);
+    const state = extractInitialState(node);
+    el.__baseState = state;
+    el.classList.add("sprite");
+    el.style.zIndex = String(zIndex);
+    parentEl.appendChild(el);
+    el.dataset.name = node.Name || "";
+    const tag = node.ActionTag;
+    if (!actionMap.has(tag)) actionMap.set(tag, []);
+    actionMap.get(tag).push(el);
 
-  if (node.Children) {
-    for (let idx = 0; idx < node.Children.length; idx++) {
-      const child = node.Children[idx];
-      if (child.ctype === "ProjectNodeObjectData" && child.FileData?.Path) {
-        const nested = await loadJson(`../res/exportJosn/${child.FileData.Path}`);
-        const nestedObj = nested.Content.Content.ObjectData;
-        if (child.Name) {
-          nestedObj.Name = child.Name;
+    // --- ZDE ZAČÍNÁ FIX PRO ATLASY ---
+    const file = node.FileData;
+    if (file && file.Type === "PlistSubImage") {
+        try {
+            const atlas = await resolveSprite(file);
+
+            // 1. Nastavíme HLAVNÍMU elementu plnou (neoříznutou) velikost
+            const fullW = atlas.sourceSize.sw;
+            const fullH = atlas.sourceSize.sh;
+
+            el.style.width = `${fullW}px`;
+            el.style.height = `${fullH}px`;
+            el.__size = { w: fullW, h: fullH };
+
+            // Reset stylů
+            el.style.backgroundImage = 'none';
+            el.style.overflow = 'visible';
+
+            // 2. Připravíme data pro VNITŘNÍ element
+            let innerEl = el.querySelector(".sprite-inner");
+            if (!innerEl) {
+                innerEl = document.createElement("div");
+                innerEl.className = "sprite-inner";
+                innerEl.style.position = "absolute";
+                innerEl.style.transformOrigin = "50% 50%";
+                el.appendChild(innerEl);
+            }
+
+            // --- OPRAVA ROZMĚRŮ PRO ROTACI ---
+            // Zjistíme fyzické rozměry výřezu v atlasu.
+            // Pokud je rotated: true, v plistu jsou rozměry prohozené (logické).
+            // My potřebujeme fyzické (jak leží v png).
+            let physicalW = atlas.frame.fw;
+            let physicalH = atlas.frame.fh;
+
+            if (atlas.rotated) {
+                physicalW = atlas.frame.fh; // Prohodíme
+                physicalH = atlas.frame.fw; // Prohodíme
+            }
+
+            // Nastavíme velikost vnitřního divu přesně podle fyzického výřezu
+            // Tím zmizí "čanourek" (bleeding), protože div nebude širší než textura.
+            innerEl.style.width = `${physicalW}px`;
+            innerEl.style.height = `${physicalH}px`;
+
+            // Nastavíme pozadí
+            innerEl.style.backgroundImage = `url(${atlas.atlasPath})`;
+            innerEl.style.backgroundRepeat = "no-repeat";
+            innerEl.style.backgroundSize = `${atlas.atlasSize.aw}px ${atlas.atlasSize.ah}px`;
+            innerEl.style.backgroundPosition = `-${atlas.frame.fx}px -${atlas.frame.fy}px`;
+
+            // 3. Výpočet pozice a rotace (OFFSET)
+            const offsetX = atlas.colorRect.cx;
+            const offsetY = atlas.colorRect.cy;
+
+            if (atlas.rotated) {
+                // --- ROTATED (-90 stupňů) ---
+
+                // Cílová vizuální šířka a výška po otočení jsou prohozené fyzické rozměry
+                const targetW = physicalH;
+                const targetH = physicalW;
+
+                // Vycentrování rotace:
+                // Máme obdélník physicalW x physicalH.
+                // Chceme, aby po otočení vizuálně zabíral targetW x targetH na pozici offsetX, offsetY.
+                // Protože se točí kolem středu, musíme posunout střed o polovinu rozdílu rozměrů.
+
+                const diffW = targetW - physicalW;
+                const diffH = targetH - physicalH;
+
+                const left = offsetX + (diffW / 2);
+                const top = offsetY + (diffH / 2);
+
+                innerEl.style.left = `${left}px`;
+                innerEl.style.top = `${top}px`;
+                innerEl.style.transform = "rotate(-90deg)";
+
+            } else {
+                // --- STANDARDNÍ ---
+                innerEl.style.left = `${offsetX}px`;
+                innerEl.style.top = `${offsetY}px`;
+                innerEl.style.transform = "none";
+            }
+
+            el.__baseState.FileData = file;
+        } catch (e) {
+            console.error("Sprite resolve failed", file, e);
         }
-        nestedObj.Position = child.Position;
-        nestedObj.Scale = child.Scale;
-        nestedObj.AnchorPoint = child.AnchorPoint;
-        nestedObj.ActionTag = child.ActionTag;
-        nestedObj.Alpha = child.Alpha;
-        await buildNodes(nestedObj, el, actionMap, assetsBase, zIndex + idx + 1);
-      } else {
-        await buildNodes(child, el, actionMap, assetsBase, zIndex + idx + 1);
-      }
+    } else {
+        // --- STANDARDNÍ OBRÁZEK ---
+        const src = assetPath(file);
+        if (src) {
+            el.style.backgroundImage = `url(${src})`;
+            el.style.backgroundSize = "100% 100%";
+            el.style.backgroundRepeat = "no-repeat";
+        }
     }
-  }
+    // --- ZBYTEK FUNKCE (REKURZE PRO DĚTI) ---
+    if (node.Children) {
+        for (let idx = 0; idx < node.Children.length; idx++) {
+            const child = node.Children[idx];
+            if (child.ctype === "ProjectNodeObjectData" && child.FileData?.Path) {
+                const nested = await loadJson(`../res/exportJosn/${child.FileData.Path}`);
+                const nestedObj = nested.Content.Content.ObjectData;
+                if (child.Name) nestedObj.Name = child.Name;
+                nestedObj.Position = child.Position;
+                nestedObj.Scale = child.Scale;
+                nestedObj.AnchorPoint = child.AnchorPoint;
+                nestedObj.ActionTag = child.ActionTag;
+                nestedObj.Alpha = child.Alpha;
+                await buildNodes(nestedObj, el, actionMap, assetsBase, zIndex + idx + 1);
+            } else {
+                await buildNodes(child, el, actionMap, assetsBase, zIndex + idx + 1);
+            }
+        }
+    }
 }
 
 async function main() {
@@ -274,13 +456,9 @@ async function main() {
 
   const animationList = new Map();
   const list = content.AnimationList || animation.AnimationList || [];
-  if (!list.length) {
-    console.warn("AnimationList is empty; check jackpot.json path and contents.");
-  }
   for (const info of list) {
     animationList.set(info.Name, { start: info.StartIndex, end: info.EndIndex });
   }
-  console.info("Loaded animations:", Array.from(animationList.keys()));
 
   const actionMap = new Map();
   await buildNodes(objectData, root, actionMap);
@@ -305,27 +483,11 @@ async function main() {
           const val = sampleFrame(frames, frame);
           updateProperty(state, prop, val);
         }
-        const tex = state.FileData;
-        if (tex && tex.Path) {
-          const name = baseName(tex.Path);
-          if (name) {
-            el.style.backgroundImage = `url(assets/${name})`;
-          }
-        }
-        const blend = state.BlendFunc || el.__baseState?.BlendFunc;
-        if (blend && blend.Src === 770 && blend.Dst === 1) {
-          el.style.mixBlendMode = "screen";
-          el.classList.add("blend-add");
-        } else {
-          el.style.mixBlendMode = "";
-          el.classList.remove("blend-add");
-        }
         applyTransform(el, state);
       }
     }
   }
 
-  // initial pose
   applyFrame(0);
 
   let current = null;
@@ -333,9 +495,7 @@ async function main() {
   function play(name) {
     const info = animationList.get(name);
     if (!info) return Promise.reject(new Error(`Unknown animation ${name}`));
-    if (resolveCurrent) {
-      resolveCurrent();
-    }
+    if (resolveCurrent) resolveCurrent();
     const length = Math.max(info.end - info.start, 1);
     const durationMs = (length / fps) * 1000;
     current = {
@@ -366,17 +526,18 @@ async function main() {
   }
   requestAnimationFrame(tick);
 
-  window.jackpotPlayer = {
+  const player = {
     play,
     animations: animationList,
     ready: Promise.resolve(),
   };
-  return window.jackpotPlayer;
+  window.jackpotPlayer = player;
+  return player;
 }
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   window.jackpotReady = main().catch((err) => {
-//     console.error(err);
-//     throw err;
-//   });
-// });
+document.addEventListener("DOMContentLoaded", () => {
+  window.jackpotReady = main().catch((err) => {
+    console.error(err);
+    throw err;
+  });
+});
