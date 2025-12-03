@@ -4,6 +4,18 @@ async function loadJson(path) {
   return res.json();
 }
 
+async function loadJsonFallback(paths) {
+  let lastErr;
+  for (const p of paths) {
+    try {
+      return await loadJson(p);
+    } catch (e) {
+      lastErr = e;
+    }
+  }
+  throw lastErr || new Error("Failed to load JSON from provided paths");
+}
+
 function baseName(path) {
   if (!path) return path;
   const parts = path.split(/[\\/]/);
@@ -248,24 +260,32 @@ async function buildNodes(node, parentEl, actionMap, assetsBase = "assets", zInd
 async function main() {
   const root = document.querySelector("#scene-origin");
   const stage = document.querySelector("#stage");
-  const toggleBtn = document.querySelector("#toggle");
   if (!root || !stage) return;
 
-  const data = await loadJson("../res/exportJosn/jackpot.json");
-  const animation = data.Content.Content.Animation;
-  const objectData = data.Content.Content.ObjectData;
+  const data = await loadJsonFallback([
+    "../res/exportJosn/jackpot.json",
+    "/res/exportJosn/jackpot.json",
+    "./res/exportJosn/jackpot.json",
+  ]);
+  const content = data.Content.Content;
+  const animation = content.Animation;
+  const objectData = content.ObjectData;
   const timelines = buildTimelineMap(animation);
+
+  const animationList = new Map();
+  const list = content.AnimationList || animation.AnimationList || [];
+  if (!list.length) {
+    console.warn("AnimationList is empty; check jackpot.json path and contents.");
+  }
+  for (const info of list) {
+    animationList.set(info.Name, { start: info.StartIndex, end: info.EndIndex });
+  }
+  console.info("Loaded animations:", Array.from(animationList.keys()));
 
   const actionMap = new Map();
   await buildNodes(objectData, root, actionMap);
 
-  const durationFrames = animation.Duration;
   const fps = 60;
-  const totalMs = (durationFrames / fps) * 1000;
-  let start = performance.now();
-  let paused = false;
-  let pauseTime = 0;
-
   const resize = () => {
     const rect = stage.getBoundingClientRect();
     const scaleX = rect.width / 1280;
@@ -276,14 +296,7 @@ async function main() {
   resize();
   window.addEventListener("resize", resize);
 
-  function tick(now) {
-    if (paused) {
-      requestAnimationFrame(tick);
-      return;
-    }
-    const elapsed = (now - start - pauseTime) % totalMs;
-    const frame = (elapsed / totalMs) * durationFrames;
-
+  function applyFrame(frame) {
     for (const [tag, elements] of actionMap.entries()) {
       const propMap = timelines.get(tag) || new Map();
       for (const el of elements) {
@@ -292,7 +305,6 @@ async function main() {
           const val = sampleFrame(frames, frame);
           updateProperty(state, prop, val);
         }
-        // Handle texture change
         const tex = state.FileData;
         if (tex && tex.Path) {
           const name = baseName(tex.Path);
@@ -300,7 +312,6 @@ async function main() {
             el.style.backgroundImage = `url(assets/${name})`;
           }
         }
-        // BlendFunc at runtime (in case it changes, though rare)
         const blend = state.BlendFunc || el.__baseState?.BlendFunc;
         if (blend && blend.Src === 770 && blend.Dst === 1) {
           el.style.mixBlendMode = "screen";
@@ -312,26 +323,60 @@ async function main() {
         applyTransform(el, state);
       }
     }
-
-    requestAnimationFrame(tick);
   }
 
-  requestAnimationFrame(tick);
+  // initial pose
+  applyFrame(0);
 
-  if (toggleBtn) {
-    toggleBtn.addEventListener("click", () => {
-      paused = !paused;
-      if (paused) {
-        toggleBtn.textContent = "▶︎ Start animation";
-        pauseTime = performance.now() - start - pauseTime;
-      } else {
-        toggleBtn.textContent = "⏸︎ Stop animation";
-        start = performance.now() - pauseTime;
-      }
+  let current = null;
+  let resolveCurrent = null;
+  function play(name) {
+    const info = animationList.get(name);
+    if (!info) return Promise.reject(new Error(`Unknown animation ${name}`));
+    if (resolveCurrent) {
+      resolveCurrent();
+    }
+    const length = Math.max(info.end - info.start, 1);
+    const durationMs = (length / fps) * 1000;
+    current = {
+      name,
+      start: info.start,
+      end: info.end,
+      durationMs,
+      startedAt: performance.now(),
+    };
+    return new Promise((resolve) => {
+      resolveCurrent = resolve;
     });
   }
+
+  function tick(now) {
+    if (current) {
+      const elapsed = now - current.startedAt;
+      const t = Math.min(elapsed / current.durationMs, 1);
+      const frame = current.start + (current.end - current.start) * t;
+      applyFrame(frame);
+      if (t >= 1 && resolveCurrent) {
+        resolveCurrent();
+        resolveCurrent = null;
+        current = null;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  window.jackpotPlayer = {
+    play,
+    animations: animationList,
+    ready: Promise.resolve(),
+  };
+  return window.jackpotPlayer;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  main().catch((err) => console.error(err));
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   window.jackpotReady = main().catch((err) => {
+//     console.error(err);
+//     throw err;
+//   });
+// });
