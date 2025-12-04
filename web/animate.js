@@ -224,31 +224,21 @@ function applyTransform(el, state) {
     const size = el.__size || { w: 0, h: 0 };
 
     // 1. POZICE (Position)
-    // Výpočet Left zůstává stejný
     const left = x - ax * size.w;
     el.style.left = `${left}px`;
 
     // --- OPRAVA POZICOVÁNÍ Y ---
     if (Y_AXIS_INVERTED) {
-        // Cocos režim (Y roste nahoru):
-        // Použijeme 'bottom' místo 'top'.
-        // y = vzdálenost bodu ukotvení od spodku rodiče.
-        // Musíme odečíst (ay * size.h), abychom posunuli "fyzický" spodek divu na správné místo.
-
         const bottom = y - (ay * size.h);
-
         el.style.bottom = `${bottom}px`;
-        el.style.top = 'auto'; // Důležité: zrušit top, aby se nehádal s bottom
+        el.style.top = 'auto';
     } else {
-        // Standardní režim (Y roste dolů):
         const top = y - ay * size.h;
         el.style.top = `${top}px`;
         el.style.bottom = 'auto';
     }
 
     // 2. TRANSFORM ORIGIN
-    // Pokud používáme Y-Up (Cocos), musíme invertovat Y složku anchoru pro CSS transform-origin
-    // (protože v CSS je 0% nahoře, zatímco v Cocos ay=1 je nahoře).
     const originY = Y_AXIS_INVERTED ? (1 - ay) : ay;
     el.style.transformOrigin = `${ax * 100}% ${originY * 100}%`;
 
@@ -266,6 +256,59 @@ function applyTransform(el, state) {
         const { Src, Dst } = state.BlendFunc;
         const additive = Src === 770 && (Dst === 1 || Dst === 771);
         el.classList.toggle("blend-add", additive);
+    }
+
+    // 5. ZMĚNA OBRÁZKU (FIX PRO SWAPOVÁNÍ TEXTUR)
+    // Pokud animace změní FileData (např. Gold -> Bronze), musíme přerenderovat texturu.
+    if (state.FileData && state.FileData !== el.__lastFileData) {
+        el.__lastFileData = state.FileData; // Uložíme si, abychom to nevolali zbytečně každý frame
+
+        // Resolve je async, ale atlas by měl být v cache, takže proběhne rychle
+        resolveSprite(state.FileData).then(atlas => {
+            let innerEl = el.querySelector(".sprite-inner");
+            if (!innerEl) {
+                // Pokud z nějakého důvodu chybí (nemělo by se stát u atlasu), vytvoříme ho
+                innerEl = document.createElement("div");
+                innerEl.className = "sprite-inner";
+                innerEl.style.position = "absolute";
+                innerEl.style.transformOrigin = "50% 50%";
+                el.appendChild(innerEl);
+            }
+
+            // Aplikujeme logiku atlasu (stejnou jako v buildNodes)
+            let physicalW = atlas.frame.fw;
+            let physicalH = atlas.frame.fh;
+            if (atlas.rotated) {
+                physicalW = atlas.frame.fh;
+                physicalH = atlas.frame.fw;
+            }
+
+            innerEl.style.width = `${physicalW}px`;
+            innerEl.style.height = `${physicalH}px`;
+            innerEl.style.backgroundImage = `url(${atlas.atlasPath})`;
+            innerEl.style.backgroundSize = `${atlas.atlasSize.aw}px ${atlas.atlasSize.ah}px`;
+            innerEl.style.backgroundPosition = `-${atlas.frame.fx}px -${atlas.frame.fy}px`;
+
+            const offsetX = atlas.colorRect.cx;
+            const offsetY = atlas.colorRect.cy;
+
+            if (atlas.rotated) {
+                const targetW = physicalH;
+                const targetH = physicalW;
+                const diffW = targetW - physicalW;
+                const diffH = targetH - physicalH;
+                const finalLeft = offsetX + (diffW / 2);
+                const finalTop = offsetY + (diffH / 2);
+
+                innerEl.style.left = `${finalLeft}px`;
+                innerEl.style.top = `${finalTop}px`;
+                innerEl.style.transform = "rotate(-90deg)";
+            } else {
+                innerEl.style.left = `${offsetX}px`;
+                innerEl.style.top = `${offsetY}px`;
+                innerEl.style.transform = "none";
+            }
+        }).catch(e => console.error("Texture swap failed", e));
     }
 }
 
@@ -289,14 +332,15 @@ function applyFrameForMap(actionMap, timelines, frame) {
         const val = sampleFrame(frames, frame);
         updateProperty(state, prop, val);
       }
-      if (state.InnerAction && el.__subPlayer) {
-        const target = state.InnerAction.CurrentAniamtionName || el.__subPlayer.defaultName;
-        const innerType = state.InnerAction.InnerActionType || "NoLoopAction";
-        const key = `${target}|${innerType}|${state.InnerAction.SingleFrameIndex ?? ""}`;
+      const innerAction = el.__manualInnerAction || state.InnerAction;
+      if (innerAction && el.__subPlayer) {
+        const target = innerAction.CurrentAniamtionName || el.__subPlayer.defaultName;
+        const innerType = innerAction.InnerActionType || "NoLoopAction";
+        const key = `${target}|${innerType}|${innerAction.SingleFrameIndex ?? ""}`;
         if (target && el.__innerActionKey !== key) {
           el.__innerActionKey = key;
           el.__innerActionName = target;
-          el.__subPlayer.play(target, innerType, state.InnerAction.SingleFrameIndex);
+          el.__subPlayer.play(target, innerType, innerAction.SingleFrameIndex);
         }
       }
       applyTransform(el, state);
@@ -304,7 +348,7 @@ function applyFrameForMap(actionMap, timelines, frame) {
   }
 }
 
-async function createPlayerFromContent(content, mountEl, basePath) {
+async function createPlayerFromContent(content, mountEl, basePath, namesMap) {
   const animation = content.Animation;
   const objectData = content.ObjectData;
   if (!animation || !objectData) return null;
@@ -316,7 +360,7 @@ async function createPlayerFromContent(content, mountEl, basePath) {
     animationList.set(info.Name, { start: info.StartIndex, end: info.EndIndex });
   }
   const actionMap = new Map();
-  await buildNodes(objectData, mountEl, actionMap, basePath);
+  await buildNodes(objectData, mountEl, actionMap, basePath, namesMap);
 
   const defaultName = animation.ActivedAnimationName || list[0]?.Name;
   const fps = 60;
@@ -335,34 +379,46 @@ async function createPlayerFromContent(content, mountEl, basePath) {
     }
   }
 
-  function play(name, innerActionType, startFrameIndex) {
-    const target = name || defaultName;
-    const info = target ? animationList.get(target) : null;
-    if (!info) return Promise.resolve(null);
-    stop();
-    const loop = innerActionType === "LoopAction";
-    const offset = typeof startFrameIndex === "number" ? startFrameIndex : 0;
-    return new Promise((resolve) => {
-      resolveCurrent = resolve;
-      const length = Math.max(info.end - info.start, 1);
-      const durationMs = (length / fps) * 1000;
-      const start = performance.now();
-      const tick = (now) => {
-        const t = (now - start) / durationMs;
-        const progress = loop ? (t % 1) : Math.min(t, 1);
-        const frame = info.start + offset + progress * length;
-        applyFrame(frame);
-        if (loop || t < 1) {
-          raf = requestAnimationFrame(tick);
-        } else {
-          raf = null;
-          resolveCurrent = null;
-          resolve();
-        }
-      };
-      raf = requestAnimationFrame(tick);
-    });
-  }
+    function play(name, innerActionType, startFrameIndex) {
+        const target = name || defaultName;
+        const info = target ? animationList.get(target) : null;
+        if (!info) return Promise.resolve(null);
+        stop();
+        const loop = innerActionType === "LoopAction";
+        const offset = typeof startFrameIndex === "number" ? startFrameIndex : 0;
+
+        // Okamžitý render prvního snímku
+        applyFrame(info.start + offset);
+
+        return new Promise((resolve) => {
+            resolveCurrent = resolve;
+            // Length se používá jen pro výpočet rychlosti (durationMs)
+            const length = Math.max(info.end - info.start, 1);
+            const durationMs = (length / fps) * 1000;
+            const start = performance.now();
+
+            const tick = (now) => {
+                const t = (now - start) / durationMs;
+                const progress = loop ? (t % 1) : Math.min(t, 1);
+
+                // --- OPRAVA ZDE ---
+                // Pokud je start==end, násobíme nulou a zůstaneme na startu.
+                // Předtím jsme násobili jedničkou (length) a ujeli jsme o 1 snímek vedle.
+                const frame = info.start + offset + progress * (info.end - info.start);
+                // ------------------
+
+                applyFrame(frame);
+                if (loop || t < 1) {
+                    raf = requestAnimationFrame(tick);
+                } else {
+                    raf = null;
+                    resolveCurrent = null;
+                    resolve();
+                }
+            };
+            raf = requestAnimationFrame(tick);
+        });
+    }
 
   return { play, animations: animationList, defaultName };
 }
@@ -443,7 +499,7 @@ function updateProperty(state, property, sample) {
   if (property === "ActionValue") state.InnerAction = sample;
 }
 
-async function buildNodes(node, parentEl, actionMap, basePath, zIndex = 0) {
+async function buildNodes(node, parentEl, actionMap, basePath, namesMap, zIndex = 0) {
     const el = createElementForNode(node);
     const state = extractInitialState(node);
     el.__baseState = state;
@@ -451,6 +507,10 @@ async function buildNodes(node, parentEl, actionMap, basePath, zIndex = 0) {
     el.style.zIndex = String(zIndex);
     parentEl.appendChild(el);
     el.dataset.name = node.Name || "";
+    if (node.Name) {
+        if (!namesMap.has(node.Name)) namesMap.set(node.Name, []);
+        namesMap.get(node.Name).push(el);
+    }
     const tag = node.ActionTag;
     if (!actionMap.has(tag)) actionMap.set(tag, []);
     actionMap.get(tag).push(el);
@@ -469,7 +529,7 @@ async function buildNodes(node, parentEl, actionMap, basePath, zIndex = 0) {
                 nestedContent.ObjectData.Position = nestedContent.ObjectData.Position || { X: 0, Y: 0 };
                 nestedContent.ObjectData.Scale = nestedContent.ObjectData.Scale || { X: 1, Y: 1 };
                 nestedContent.ObjectData.AnchorPoint = nestedContent.ObjectData.AnchorPoint || { ScaleX: 0.5, ScaleY: 0.5 };
-                const subPlayer = await createPlayerFromContent(nestedContent, el, nestedBase);
+                const subPlayer = await createPlayerFromContent(nestedContent, el, nestedBase, namesMap);
                 if (subPlayer) {
                     el.__subPlayer = subPlayer;
                     el.__innerActionName = subPlayer.defaultName;
@@ -584,7 +644,7 @@ async function buildNodes(node, parentEl, actionMap, basePath, zIndex = 0) {
     if (node.Children) {
         for (let idx = 0; idx < node.Children.length; idx++) {
             const child = node.Children[idx];
-            await buildNodes(child, el, actionMap, basePath, zIndex + idx + 1);
+            await buildNodes(child, el, actionMap, basePath, namesMap, zIndex + idx + 1);
         }
     }
 }
@@ -611,7 +671,8 @@ async function main(jsonPath = "../res/exportJosn/jackpot.json") {
   }
 
   const actionMap = new Map();
-  await buildNodes(objectData, root, actionMap, base);
+  const namesMap = new Map();
+  await buildNodes(objectData, root, actionMap, base, namesMap);
 
   const fps = 60;
   const resize = () => {
@@ -667,6 +728,70 @@ async function main(jsonPath = "../res/exportJosn/jackpot.json") {
   const player = {
     play,
     animations: animationList,
+    getElement(name) {
+      const arr = namesMap.get(name);
+      return arr ? arr[0] : null;
+    },
+    getElements(name) {
+      return namesMap.get(name) || [];
+    },
+    getSubPlayer(name) {
+      const arr = namesMap.get(name) || [];
+      for (const el of arr) {
+        if (el.__subPlayer) return el.__subPlayer;
+      }
+      return null;
+    },
+      playNested(name, animationName, innerType = "LoopAction", startFrameIndex) {
+          const sub = this.getSubPlayer(name);
+          if (!sub) return Promise.reject(new Error(`Subplayer ${name} not found`));
+
+          const arr = namesMap.get(name) || [];
+          for (const el of arr) {
+              if (el.__subPlayer) {
+                  el.__manualInnerAction = {
+                      CurrentAniamtionName: animationName,
+                      InnerActionType: innerType,
+                      SingleFrameIndex: startFrameIndex,
+                  };
+                  // Klíč bez randomu
+                  el.__innerActionKey = `${animationName}|${innerType}|${startFrameIndex ?? ""}`;
+              }
+          }
+
+          // --- ZMĚNA ZDE: Uložíme si Promise ---
+          const promise = sub.play(animationName, innerType, startFrameIndex);
+
+          // --- A HNED VYNUTÍME PRVNÍ FRAME (0) ---
+          // Tím zajistíme, že se grafika přepne OKAMŽITĚ, i kdyby animace stála.
+          // Přistupujeme k interní funkci applyFrame, kterou musíme zveřejnit, nebo to udělat přes play.
+          // Protože nemáme přímý přístup k 'applyFrame' zvenčí, spolehneme se na to,
+          // že sub.play() v animate.js už volá 'applyFrame(0)' na řádku cca 230.
+          // Pokud to tam je, mělo by to fungovat.
+
+          return promise;
+      },
+    clearNested(name) {
+      const arr = namesMap.get(name) || [];
+      for (const el of arr) {
+        if (el.__subPlayer) {
+          delete el.__manualInnerAction;
+          el.__innerActionKey = null;
+        }
+      }
+    },
+    setText(name, text) {
+      const arr = namesMap.get(name);
+      if (!arr) return false;
+      let changed = false;
+      for (const el of arr) {
+        el.textContent = text;
+        const inner = el.querySelector(".text-node");
+        if (inner) inner.textContent = text;
+        changed = true;
+      }
+      return changed;
+    },
     ready: Promise.resolve(),
   };
   window.jackpotPlayer = player;

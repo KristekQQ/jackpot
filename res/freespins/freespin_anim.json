@@ -1,0 +1,266 @@
+{
+  "ID": "a2e84194-a3f4-4c4c-ba92-7e1bb3b3e42e",
+  "Version": "3.10.0.0",
+  "Name": "freespin_anim",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 41,
+        "Speed": 1.0,
+        "Timelines": [
+          {
+            "ActionTag": 1079939111,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": 0.0,
+                "Y": 0.0,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 0.0,
+                "Y": 0.0,
+                "FrameIndex": 1,
+                "EasingData": {
+                  "Type": 5
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 0.0,
+                "Y": -66.0,
+                "FrameIndex": 21,
+                "EasingData": {
+                  "Type": 4
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 0.0,
+                "Y": 0.0,
+                "FrameIndex": 41,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1079939111,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": false,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              },
+              {
+                "Value": true,
+                "FrameIndex": 1,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          }
+        ],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [
+        {
+          "StartIndex": 0,
+          "EndIndex": 0,
+          "Name": "BASE",
+          "ctype": "AnimationInfoData"
+        },
+        {
+          "StartIndex": 1,
+          "EndIndex": 21,
+          "Name": "SHOW",
+          "ctype": "AnimationInfoData"
+        },
+        {
+          "StartIndex": 22,
+          "EndIndex": 41,
+          "Name": "HIDE",
+          "ctype": "AnimationInfoData"
+        }
+      ],
+      "ObjectData": {
+        "Tag": 1,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "freespins_display.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": -18.315
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "RightMargin": -245.0,
+            "TopMargin": -47.685,
+            "BottomMargin": -18.315,
+            "Tag": 22,
+            "Children": [
+              {
+                "IsCustomSize": true,
+                "FontSize": 30,
+                "LabelText": "0",
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Bottom",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 189.0,
+                  "Y": 40.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "G": 237,
+                  "B": 117
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.7714,
+                  "Y": 0.6061
+                },
+                "PreSize": {
+                  "X": 0.2653,
+                  "Y": 0.5303
+                },
+                "LeftMargin": 156.5,
+                "RightMargin": 23.5,
+                "TopMargin": 8.5,
+                "BottomMargin": 22.5,
+                "Tag": 23,
+                "ActionTag": -2046499384,
+                "Size": {
+                  "X": 65.0,
+                  "Y": 35.0
+                },
+                "Name": "numbers_txt",
+                "ctype": "TextObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 30,
+                "LabelText": "txt",
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 85.0,
+                  "Y": 40.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 94,
+                  "G": 44,
+                  "B": 0
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.3469,
+                  "Y": 0.6061
+                },
+                "PreSize": {
+                  "X": 0.551,
+                  "Y": 0.6061
+                },
+                "LeftMargin": 17.5,
+                "RightMargin": 92.5,
+                "TopMargin": 6.0,
+                "BottomMargin": 20.0,
+                "Tag": 24,
+                "ActionTag": 1009723549,
+                "Size": {
+                  "X": 135.0,
+                  "Y": 40.0
+                },
+                "Name": "title_txt",
+                "ctype": "TextObjectData"
+              }
+            ],
+            "ActionTag": 1079939111,
+            "Size": {
+              "X": 245.0,
+              "Y": 66.0
+            },
+            "Name": "freespin_diplay_bg",
+            "ctype": "SpriteObjectData"
+          }
+        ],
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Name": "freespin",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "freespins_display.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Node"
+}
