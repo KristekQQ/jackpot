@@ -198,7 +198,7 @@ function createElementForNode(node) {
     el.textContent = node.LabelText || "";
     el.classList.add("text-node");
     el.style.fontSize = `${node.FontSize || 24}px`;
-    el.style.color = `rgb(${node.CColor?.R || 255},${node.CColor?.G || 255},${node.CColor?.B || 255})`;
+    el.style.color = `rgb(${node.CColor?.R ?? 255},${node.CColor?.G ?? 255},${node.CColor?.B ?? 255})`;
     el.style.textAlign = "center";
     el.style.whiteSpace = "nowrap";
   }
@@ -262,53 +262,67 @@ function applyTransform(el, state) {
     // Pokud animace změní FileData (např. Gold -> Bronze), musíme přerenderovat texturu.
     if (state.FileData && state.FileData !== el.__lastFileData) {
         el.__lastFileData = state.FileData; // Uložíme si, abychom to nevolali zbytečně každý frame
+        const baseForAssets = el.__basePath || BASE_PATH;
 
-        // Resolve je async, ale atlas by měl být v cache, takže proběhne rychle
-        resolveSprite(state.FileData).then(atlas => {
-            let innerEl = el.querySelector(".sprite-inner");
-            if (!innerEl) {
-                // Pokud z nějakého důvodu chybí (nemělo by se stát u atlasu), vytvoříme ho
-                innerEl = document.createElement("div");
-                innerEl.className = "sprite-inner";
-                innerEl.style.position = "absolute";
-                innerEl.style.transformOrigin = "50% 50%";
-                el.appendChild(innerEl);
+        if (state.FileData.Type === "PlistSubImage" && state.FileData.Plist) {
+            // Resolve je async, ale atlas by měl být v cache, takže proběhne rychle
+            resolveSprite(state.FileData, baseForAssets).then(atlas => {
+                let innerEl = el.querySelector(".sprite-inner");
+                if (!innerEl) {
+                    // Pokud z nějakého důvodu chybí (nemělo by se stát u atlasu), vytvoříme ho
+                    innerEl = document.createElement("div");
+                    innerEl.className = "sprite-inner";
+                    innerEl.style.position = "absolute";
+                    innerEl.style.transformOrigin = "50% 50%";
+                    el.appendChild(innerEl);
+                }
+
+                // Aplikujeme logiku atlasu (stejnou jako v buildNodes)
+                let physicalW = atlas.frame.fw;
+                let physicalH = atlas.frame.fh;
+                if (atlas.rotated) {
+                    physicalW = atlas.frame.fh;
+                    physicalH = atlas.frame.fw;
+                }
+
+                innerEl.style.width = `${physicalW}px`;
+                innerEl.style.height = `${physicalH}px`;
+                innerEl.style.backgroundImage = `url(${atlas.atlasPath})`;
+                innerEl.style.backgroundSize = `${atlas.atlasSize.aw}px ${atlas.atlasSize.ah}px`;
+                innerEl.style.backgroundPosition = `-${atlas.frame.fx}px -${atlas.frame.fy}px`;
+
+                const offsetX = atlas.colorRect.cx;
+                const offsetY = atlas.colorRect.cy;
+
+                if (atlas.rotated) {
+                    const targetW = physicalH;
+                    const targetH = physicalW;
+                    const diffW = targetW - physicalW;
+                    const diffH = targetH - physicalH;
+                    const finalLeft = offsetX + (diffW / 2);
+                    const finalTop = offsetY + (diffH / 2);
+
+                    innerEl.style.left = `${finalLeft}px`;
+                    innerEl.style.top = `${finalTop}px`;
+                    innerEl.style.transform = "rotate(-90deg)";
+                } else {
+                    innerEl.style.left = `${offsetX}px`;
+                    innerEl.style.top = `${offsetY}px`;
+                    innerEl.style.transform = "none";
+                }
+            }).catch(e => console.error("Texture swap failed", e));
+        } else {
+            // Obyčejný obrázek
+            const src = assetPath(state.FileData, baseForAssets);
+            if (src) {
+                el.style.backgroundImage = `url(${src})`;
+                el.style.backgroundSize = "100% 100%";
+                el.style.backgroundRepeat = "no-repeat";
+                // Pokud existuje vnitřní div, vyčistíme ho
+                const innerEl = el.querySelector(".sprite-inner");
+                if (innerEl) innerEl.remove();
             }
-
-            // Aplikujeme logiku atlasu (stejnou jako v buildNodes)
-            let physicalW = atlas.frame.fw;
-            let physicalH = atlas.frame.fh;
-            if (atlas.rotated) {
-                physicalW = atlas.frame.fh;
-                physicalH = atlas.frame.fw;
-            }
-
-            innerEl.style.width = `${physicalW}px`;
-            innerEl.style.height = `${physicalH}px`;
-            innerEl.style.backgroundImage = `url(${atlas.atlasPath})`;
-            innerEl.style.backgroundSize = `${atlas.atlasSize.aw}px ${atlas.atlasSize.ah}px`;
-            innerEl.style.backgroundPosition = `-${atlas.frame.fx}px -${atlas.frame.fy}px`;
-
-            const offsetX = atlas.colorRect.cx;
-            const offsetY = atlas.colorRect.cy;
-
-            if (atlas.rotated) {
-                const targetW = physicalH;
-                const targetH = physicalW;
-                const diffW = targetW - physicalW;
-                const diffH = targetH - physicalH;
-                const finalLeft = offsetX + (diffW / 2);
-                const finalTop = offsetY + (diffH / 2);
-
-                innerEl.style.left = `${finalLeft}px`;
-                innerEl.style.top = `${finalTop}px`;
-                innerEl.style.transform = "rotate(-90deg)";
-            } else {
-                innerEl.style.left = `${offsetX}px`;
-                innerEl.style.top = `${offsetY}px`;
-                innerEl.style.transform = "none";
-            }
-        }).catch(e => console.error("Texture swap failed", e));
+        }
     }
 }
 
@@ -503,6 +517,7 @@ async function buildNodes(node, parentEl, actionMap, basePath, namesMap, zIndex 
     const el = createElementForNode(node);
     const state = extractInitialState(node);
     el.__baseState = state;
+    el.__basePath = basePath;
     el.classList.add("sprite");
     el.style.zIndex = String(zIndex);
     parentEl.appendChild(el);
