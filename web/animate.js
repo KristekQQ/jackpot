@@ -199,6 +199,11 @@ function createElementForNode(node) {
     el.classList.add("text-node");
     el.style.fontSize = `${node.FontSize || 24}px`;
     el.style.color = `rgb(${node.CColor?.R ?? 255},${node.CColor?.G ?? 255},${node.CColor?.B ?? 255})`;
+    el.style.fontWeight = node.FontResource?.FontStyle || node.FontStyle || "300";
+    if (node.FontResource?.Path) {
+      const family = node.FontResource.Path.split("/").pop()?.replace(/\.[^.]+$/, "") || "Roboto";
+      el.style.fontFamily = `"${family}", "Roboto", "Open Sans", "Arial", system-ui, sans-serif`;
+    }
     el.style.textAlign = "center";
     el.style.whiteSpace = "nowrap";
   }
@@ -804,6 +809,47 @@ async function main(jsonPath = "../res/exportJosn/jackpot.json") {
         const inner = el.querySelector(".text-node");
         if (inner) inner.textContent = text;
         changed = true;
+      }
+      return changed;
+    },
+    setLabel(name, opts = {}) {
+      const arr = namesMap.get(name);
+      if (!arr) return false;
+      let changed = false;
+      for (const host of arr) {
+        const el = host.querySelector(".text-node") || host;
+        if (opts.text !== undefined) {
+          el.textContent = opts.text;
+          host.textContent = opts.text;
+          changed = true;
+        }
+        if (opts.color !== undefined) {
+          const color = typeof opts.color === "string"
+            ? opts.color
+            : `rgb(${opts.color.R ?? 255},${opts.color.G ?? 255},${opts.color.B ?? 255})`;
+          el.style.color = color;
+          changed = true;
+        }
+        if (opts.fontSize !== undefined) {
+          el.style.fontSize = typeof opts.fontSize === "number" ? `${opts.fontSize}px` : opts.fontSize;
+          changed = true;
+        }
+        if (opts.fontWeight !== undefined) {
+          el.style.fontWeight = opts.fontWeight;
+          changed = true;
+        }
+        if (opts.fontFamily !== undefined) {
+          el.style.fontFamily = opts.fontFamily;
+          changed = true;
+        }
+        if (opts.letterSpacing !== undefined) {
+          el.style.letterSpacing = typeof opts.letterSpacing === "number" ? `${opts.letterSpacing}px` : opts.letterSpacing;
+          changed = true;
+        }
+        if (opts.textShadow !== undefined) {
+          el.style.textShadow = opts.textShadow;
+          changed = true;
+        }
       }
       return changed;
     },
