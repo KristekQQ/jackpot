@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         const player = await main(jsonPath);
         if (!player) return;
-        player.playNested("display_bg", "UNIVERZAL", "NoLoopAction");
+
         // player.setLabel("price", {
         //     text: "124.4",
         //     color: "#360000",
@@ -19,16 +19,20 @@ document.addEventListener("DOMContentLoaded", async () => {
         player.setLabel("price", {
             text: "124.4"});
         while (true) {
-
+            player.playNested("display_bg", "UNIVERZAL", "NoLoopAction");
+            player.setColor("display_bg", "#a3a3c2");
+            player.setLabel("text", {
+                text: "PLATINUM"});
             // player.setText("price", "124.4");
           if (player.animations.has("JACKPOT_BEGIN")) await player.play("JACKPOT_BEGIN");
             // player.playNested("display_bg", "GOLD", "NoLoopAction")
+
           if (player.animations.has("PRIZE_BEGIN")) await player.play("PRIZE_BEGIN")
-            player.playNested("display_bg", "GOLD", "NoLoopAction")
+            // player.playNested("display_bg", "GOLD", "NoLoopAction")
           if (player.animations.has("PRIZE_STOP")) await player.play("PRIZE_STOP");
-            player.playNested("display_bg", "BRONZE", "NoLoopAction")
+            // player.playNested("display_bg", "BRONZE", "NoLoopAction")
           if (player.animations.has("PRIZE_COUNTDOWN")) await player.play("PRIZE_COUNTDOWN");
-            player.playNested("display_bg", "SILVER", "NoLoopAction")
+            // player.playNested("display_bg", "SILVER", "NoLoopAction")
           if (player.animations.has("PRIZE_COUNTDOWN_END")) await player.play("PRIZE_COUNTDOWN_END");
           if (player.animations.has("JACKPOT_END")) await player.play("JACKPOT_END");
         }
@@ -51,7 +55,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         // if (!player) return;
         // while (true) {
         //     await player.play("SHOW")
-        //     await player.play("HIDE")
+        //     // await player.play("HIDE")
         //     // await player.play("PRICE_STOP")
         // }
 
